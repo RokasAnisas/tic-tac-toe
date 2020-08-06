@@ -1,13 +1,13 @@
 .main-layout {
-  background-color: color('dark');
+  background-color: color('background');
   display: flex;
   min-height: 100vh;
   width: 100vw;
 
-  &__logo {
-    left: 50%;
-    position: fixed;
-    top: spacing('s');
-    transform: translateX(-50%);
+  &__body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: spacing('s');
+    width: 100%;
   }
 }

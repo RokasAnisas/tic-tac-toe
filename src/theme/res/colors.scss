@@ -2,8 +2,11 @@ $color-dark: #0a0a0a;
 $color-light: #fff;
 
 $theme-colors: (
+  'accent': '#12CEC7',
   'dark': $color-dark,
   'light': $color-light,
+  'gray': '#707070',
+  'background': $color-light,
 );
 
 @function color($_key) {
