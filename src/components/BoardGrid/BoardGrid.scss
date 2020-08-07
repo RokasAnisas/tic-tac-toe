@@ -1,0 +1,15 @@
+.board-grid {
+  $_grid-size: 60vmin;
+  $_grid-block-size: calc(100% / 3);
+
+  display: flex;
+  flex-wrap: wrap;
+  height: $_grid-size;
+  width: $_grid-size;
+
+  &__item {
+    border: 1px solid color('dark');
+    flex-basis: $_grid-block-size;
+    height: $_grid-block-size;
+  }
+}
