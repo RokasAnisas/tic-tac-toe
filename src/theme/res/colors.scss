@@ -4,6 +4,8 @@ $color-light: #fff;
 $theme-colors: (
   'dark': $color-dark,
   'light': $color-light,
+  'background': $color-light,
+  'accent': rgb(35, 190, 236),
 );
 
 @function color($_key) {
