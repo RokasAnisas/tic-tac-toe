@@ -6,7 +6,7 @@ const BoardGrid: FunctionComponent = () => {
   const className = 'board-grid';
   const itemsCount = Array.from(Array(9).keys());
 
-  const renderBlocks = itemsCount.map((block: number, index) => {
+  const renderBlocks = itemsCount.map((items: number, index) => {
     return <div key={index} className={`${className}__item`} />;
   });
 
