@@ -1,7 +1,7 @@
 {
-  "name": "ra-react-template",
+  "name": "tic-tac-toe",
   "version": "0.1.2",
-  "description": "React Template by Rokas Anisas",
+  "description": "Another tic tac toe game",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",

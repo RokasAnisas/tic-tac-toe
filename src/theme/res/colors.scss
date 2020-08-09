@@ -2,10 +2,11 @@ $color-dark: #0a0a0a;
 $color-light: #fff;
 
 $theme-colors: (
+  'accent': #12CEC7,
   'dark': $color-dark,
   'light': $color-light,
   'background': $color-light,
-  'accent': rgb(35, 190, 236),
+  'gray': #707070,
 );
 
 @function color($_key) {
