@@ -7,7 +7,7 @@ const Logo: FunctionComponent = () => {
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>Logo</h1>
+      <h1 className={`${className}__title`}>TicTacToe</h1>
     </div>
   );
 };
