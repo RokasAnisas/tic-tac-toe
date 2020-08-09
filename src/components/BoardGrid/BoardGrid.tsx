@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
-import { GridBlock } from '@/store/types';
+import { GridBlockType } from '@/store/types';
 
-import { default as GridBlockComponent } from '@/components/GridBlock';
+import GridBlock from '@/components/GridBlock';
 
 import './BoardGrid.scss';
 
@@ -12,17 +12,17 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
 }: BoardGridProps) => {
   const className = 'board-grid';
 
-  const renderBlocks = blocks.map((item: GridBlock, index) => {
+  const renderBlocks = blocks.map((item: GridBlockType, index) => {
     if (!item) {
       return (
         <div key={index} className={`${className}__block`}>
-          <GridBlockComponent onClick={() => onItemClick(index)} />
+          <GridBlock onClick={() => onItemClick(index)} />
         </div>
       );
     }
     return (
       <div key={index} className={`${className}__block`}>
-        <GridBlockComponent type={item.player} />
+        <GridBlock type={item.player} />
       </div>
     );
   });
@@ -45,7 +45,7 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
 };
 
 interface BoardGridProps {
-  blocks: GridBlock[];
+  blocks: GridBlockType[];
   onItemClick: (id: number) => void;
 }
 

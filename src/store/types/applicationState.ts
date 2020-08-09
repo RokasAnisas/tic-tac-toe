@@ -1,6 +1,6 @@
-import { Player, GridBlock } from './';
+import { Player, GridBlockType } from './';
 
 export interface ApplicationState {
   activePlayer: Player;
-  grid: Array<GridBlock>;
+  grid: Array<GridBlockType>;
 }

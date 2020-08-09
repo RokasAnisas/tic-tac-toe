@@ -1,0 +1,1 @@
+export { gridSize } from './gridSize';
