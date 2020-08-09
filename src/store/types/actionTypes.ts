@@ -1,12 +1,22 @@
 import { Player } from '@/constants';
+import { GridBlockType } from './';
 
 export interface SetActivePlayer {
   type: ActionTypes.setActivePlayer;
   payload: Player;
 }
 
-export enum ActionTypes {
-  setActivePlayer = 'SetActivePlayer',
+export interface UpdateGrid {
+  type: ActionTypes.updateGrid;
+  payload: {
+    id: number;
+    content: GridBlockType;
+  };
 }
 
-export type Actions = SetActivePlayer;
+export enum ActionTypes {
+  setActivePlayer = 'SetActivePlayer',
+  updateGrid = 'UpdateGrid',
+}
+
+export type Actions = SetActivePlayer | UpdateGrid;

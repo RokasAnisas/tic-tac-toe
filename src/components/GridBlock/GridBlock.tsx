@@ -7,7 +7,7 @@ import './GridBlock.scss';
 
 const GridBlock: FunctionComponent<GridBlockProps> = ({
   type,
-  onClick
+  onClick,
 }: GridBlockProps) => {
   const className = 'grid-block';
 
