@@ -1,3 +1,22 @@
 .x-mark {
-  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  &__cross {
+    background-color: color('dark');
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 1px;
+
+    &.-a {
+      transform: rotateZ(45deg);
+    }
+
+    &.-b {
+      transform: rotateZ(-45deg);
+    }
+  }
 }
