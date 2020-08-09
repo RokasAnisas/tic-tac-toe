@@ -12,3 +12,7 @@ export const UpdateGrid = (payload: {
 }): void => {
   store.dispatch({ type: ActionTypes.updateGrid, payload: payload });
 };
+
+export const ResetGrid = (): void => {
+  store.dispatch({ type: ActionTypes.resetGrid });
+};
