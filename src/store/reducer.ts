@@ -18,6 +18,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         ),
       };
     }
+    case ActionTypes.resetGrid: {
+      return {
+        ...state,
+        grid: initialState.grid,
+      };
+    }
     default: {
       return state;
     }

@@ -14,9 +14,14 @@ export interface UpdateGrid {
   };
 }
 
+export interface ResetGrid {
+  type: ActionTypes.resetGrid;
+}
+
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
   updateGrid = 'UpdateGrid',
+  resetGrid = 'ResetGrid',
 }
 
-export type Actions = SetActivePlayer | UpdateGrid;
+export type Actions = SetActivePlayer | UpdateGrid | ResetGrid;

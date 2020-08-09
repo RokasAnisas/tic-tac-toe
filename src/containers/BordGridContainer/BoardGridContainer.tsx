@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { checkWinner } from '@/utils';
-import { UpdateGrid, SetActivePlayer } from '@/store/actions';
+import { UpdateGrid, SetActivePlayer, ResetGrid } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
 import { Player } from '@/constants';
@@ -33,7 +33,10 @@ const BoardGridContainer: FunctionComponent = () => {
   useEffect(() => {
     const winner = checkWinner(grid);
 
-    console.log(winner);
+    if (winner) {
+      alert(`${winner} Wins!`);
+      ResetGrid();
+    }
   }, [grid]);
 
   return <BoardGrid blocks={grid} onItemClick={onItemClick} />;
