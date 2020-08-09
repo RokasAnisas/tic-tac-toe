@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import './GridBlock.scss';
 
 const GridBlock: FunctionComponent<GridBlockProps> = ({
-  type = 'x',
+  type,
   onClick
 }: GridBlockProps) => {
   const className = 'grid-block';

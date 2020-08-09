@@ -13,9 +13,16 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
   const className = 'board-grid';
 
   const renderBlocks = blocks.map((item: GridBlock, index) => {
+    if (!item) {
+      return (
+        <div key={index} className={`${className}__block`}>
+          <GridBlockComponent onClick={() => onItemClick(index)} />
+        </div>
+      );
+    }
     return (
       <div key={index} className={`${className}__block`}>
-        <GridBlockComponent onClick={() => onItemClick(index)} />
+        <GridBlockComponent type={item.player} />
       </div>
     );
   });
