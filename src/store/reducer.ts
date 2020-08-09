@@ -4,12 +4,6 @@ import initialState from './initialState';
 
 const reducer = (state = initialState, action: Actions): ApplicationState => {
   switch (action.type) {
-    case ActionTypes.setTitle: {
-      return {
-        ...state,
-        title: action.payload,
-      };
-    }
     case ActionTypes.setActivePlayer: {
       return {
         ...state,
