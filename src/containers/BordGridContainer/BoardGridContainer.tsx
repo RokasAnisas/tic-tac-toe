@@ -22,11 +22,18 @@ const BoardGridContainer: FunctionComponent = () => {
       },
     });
 
+    toggleActivePlayer();
+  };
+
+  const toggleActivePlayer = (): void => {
     const nextPlayer = activePlayer === Player.o ? Player.x : Player.o;
     SetActivePlayer(nextPlayer);
   };
+
   useEffect(() => {
-    checkWinner(grid);
+    const winner = checkWinner(grid);
+
+    console.log(winner);
   }, [grid]);
 
   return <BoardGrid blocks={grid} onItemClick={onItemClick} />;
