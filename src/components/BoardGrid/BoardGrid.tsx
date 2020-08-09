@@ -8,13 +8,14 @@ import './BoardGrid.scss';
 
 const BoardGrid: FunctionComponent<BoardGridProps> = ({
   blocks,
+  onItemClick,
 }: BoardGridProps) => {
   const className = 'board-grid';
 
   const renderBlocks = blocks.map((item: GridBlock, index) => {
     return (
       <div key={index} className={`${className}__block`}>
-        <GridBlockComponent />
+        <GridBlockComponent onClick={() => onItemClick(index)} />
       </div>
     );
   });
@@ -38,6 +39,7 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
 
 interface BoardGridProps {
   blocks: GridBlock[];
+  onItemClick: (id: number) => void;
 }
 
 export default BoardGrid;

@@ -6,10 +6,11 @@ import BoardGrid from '@/components/BoardGrid';
 
 const BoardGridContainer: FunctionComponent = () => {
   const grid = useSelector((state: ApplicationState) => state.grid);
+  const onItemClick = (id: number) => {
+    console.log(id);
+  };
 
-  return (
-    <BoardGrid blocks={grid} />
-  );
+  return <BoardGrid blocks={grid} onItemClick={onItemClick} />;
 };
 
 export default BoardGridContainer;

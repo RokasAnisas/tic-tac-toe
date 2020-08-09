@@ -5,11 +5,13 @@ import './GridBlock.scss';
 
 const GridBlock: FunctionComponent<GridBlockProps> = ({
   type = 'x',
+  onClick
 }: GridBlockProps) => {
   const className = 'grid-block';
 
   return (
     <button
+      onClick={onClick}
       className={classNames(className, {
         '-x': type === 'x',
         '-o': type === 'o',
@@ -22,6 +24,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
 
 interface GridBlockProps {
   type?: 'x' | 'o';
+  onClick?: () => void;
 }
 
 export default GridBlock;
