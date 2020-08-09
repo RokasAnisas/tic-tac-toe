@@ -5,11 +5,47 @@
   display: flex;
   flex-wrap: wrap;
   height: $_grid-size;
+  position: relative;
   width: $_grid-size;
+  z-index: z-index('base');
 
   &__item {
-    border: 1px solid color('dark');
     flex-basis: $_grid-item-size;
     height: $_grid-item-size;
+  }
+
+  &__lines {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: z-index('background');
+  }
+
+  &__line {
+    background-color: color('dark');
+    position: absolute;
+
+    &.-horizontal {
+      height: 1px;
+      top: calc(100% / 3);
+      width: 100%;
+
+      &:nth-of-type(2) {
+        top: calc(100% / 3 * 2);
+      }
+    }
+
+    &.-vertical {
+      height: 100%;
+      left: calc(100% / 3);
+      width: 1px;
+
+      &:nth-of-type(2) {
+        left: calc(100% / 3 * 2);
+      }
+    }
   }
 }

@@ -16,7 +16,21 @@ const BoardGrid: FunctionComponent = () => {
     );
   });
 
-  return <div className={className}>{renderBlocks}</div>;
+  return (
+    <div className={className}>
+      <div className={`${className}__lines`}>
+        <div className={`${className}__lines-horizontal`}>
+          <div className={`${className}__line -horizontal`} />
+          <div className={`${className}__line -horizontal`} />
+        </div>
+        <div className={`${className}__lines-vertical`}>
+          <div className={`${className}__line -vertical`} />
+          <div className={`${className}__line -vertical`} />
+        </div>
+      </div>
+      {renderBlocks}
+    </div>
+  );
 };
 
 export default BoardGrid;
