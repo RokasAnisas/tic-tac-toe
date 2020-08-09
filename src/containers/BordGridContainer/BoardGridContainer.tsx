@@ -22,7 +22,6 @@ const BoardGridContainer: FunctionComponent = () => {
       },
     });
 
-
     toggleActivePlayer();
   };
 
