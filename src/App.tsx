@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
 
 import MainLayout from '@/layouts/MainLayout';
-import BoardGrid from '@/components/BoardGrid';
+import BoardGridContainer from '@/containers/BordGridContainer';
 
 const App: FunctionComponent = () => {
   return (
     <MainLayout>
-      <BoardGrid />
+      <BoardGridContainer />
     </MainLayout>
   );
 };
