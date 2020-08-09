@@ -1,0 +1,9 @@
+$sizes-map: (
+  'max-mobile': 80vw,
+  'max-tablet': 600px,
+  'max-desktop': 600px,
+);
+
+@function size($_key) {
+  @return map-get($sizes-map, $_key);
+}

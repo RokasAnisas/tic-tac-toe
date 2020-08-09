@@ -1,10 +1,22 @@
-export interface SetTitle {
-  type: ActionTypes.setTitle;
-  payload: string;
+import { Player } from '@/constants';
+import { GridBlockType } from './';
+
+export interface SetActivePlayer {
+  type: ActionTypes.setActivePlayer;
+  payload: Player;
+}
+
+export interface UpdateGrid {
+  type: ActionTypes.updateGrid;
+  payload: {
+    id: number;
+    content: GridBlockType;
+  };
 }
 
 export enum ActionTypes {
-  setTitle = 'SetTitle',
+  setActivePlayer = 'SetActivePlayer',
+  updateGrid = 'UpdateGrid',
 }
 
-export type Actions = SetTitle;
+export type Actions = SetActivePlayer | UpdateGrid;

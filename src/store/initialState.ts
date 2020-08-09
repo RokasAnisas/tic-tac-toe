@@ -1,7 +1,17 @@
-import { ApplicationState } from './types/applicationState';
+import { ApplicationState, GridBlockType } from './types';
+import { gridSize, Player } from '@/constants';
+
+const initialGrid = (): GridBlockType[] => {
+  const _grid = [];
+  for (let i = 0; i < gridSize; i++) {
+    _grid.push(undefined);
+  }
+  return _grid;
+};
 
 const initialState: ApplicationState = {
-  title: 'ra-react-template',
+  activePlayer: Player.x,
+  grid: initialGrid(),
 };
 
 export default initialState;

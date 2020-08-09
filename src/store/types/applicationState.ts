@@ -1,3 +1,7 @@
+import { GridBlockType } from './';
+import { Player } from '@/constants';
+
 export interface ApplicationState {
-  title: string;
+  activePlayer: Player;
+  grid: Array<GridBlockType>;
 }
