@@ -28,7 +28,9 @@ const BoardGrid: FunctionComponent = () => {
           <div className={`${className}__line -vertical`} />
         </div>
       </div>
-      {renderBlocks}
+      <div className={`${className}__blocks-container`}>
+        {renderBlocks}
+      </div>
     </div>
   );
 };
