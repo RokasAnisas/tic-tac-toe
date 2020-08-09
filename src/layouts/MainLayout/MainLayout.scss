@@ -5,11 +5,4 @@
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-
-  &__logo {
-    left: 50%;
-    position: fixed;
-    top: spacing('l');
-    transform: translateX(-50%);
-  }
 }
