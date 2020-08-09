@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
+import { checkWinner } from '@/utils';
 import { UpdateGrid, SetActivePlayer } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
@@ -24,6 +25,9 @@ const BoardGridContainer: FunctionComponent = () => {
     const nextPlayer = activePlayer === Player.o ? Player.x : Player.o;
     SetActivePlayer(nextPlayer);
   };
+  useEffect(() => {
+    checkWinner(grid);
+  }, [grid]);
 
   return <BoardGrid blocks={grid} onItemClick={onItemClick} />;
 };

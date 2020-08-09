@@ -6,6 +6,9 @@ export const SetActivePlayer = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.setActivePlayer, payload: payload });
 };
 
-export const UpdateGrid = (payload: { content: GridBlockType, id: number }): void => {
+export const UpdateGrid = (payload: {
+  content: GridBlockType;
+  id: number;
+}): void => {
   store.dispatch({ type: ActionTypes.updateGrid, payload: payload });
 };
