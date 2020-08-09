@@ -1,6 +1,8 @@
+import { Player } from '@/constants';
 import { GridBlockType } from '@/store/types';
 
-export const checkWinner = (grid: GridBlockType[]): void => {
+export const checkWinner = (grid: GridBlockType[]): WinnerType => {
+  let winner: WinnerType;
   const winCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -25,8 +27,12 @@ export const checkWinner = (grid: GridBlockType[]): void => {
       const win = takeArray.every(item => item?.player === control?.player);
 
       if (win) {
-        confirm(`${control?.player} Wins!`);
+        winner = control?.player;
       }
     }
   });
+
+  return winner;
 };
+
+type WinnerType = Player | undefined;
