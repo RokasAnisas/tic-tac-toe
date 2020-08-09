@@ -1,4 +1,4 @@
-import { Player } from './player';
+import { Player } from '@/constants';
 
 export interface SetActivePlayer {
   type: ActionTypes.setActivePlayer;

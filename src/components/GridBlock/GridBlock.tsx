@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 
+import { Player } from '@/constants/player';
+
 import './GridBlock.scss';
 
 const GridBlock: FunctionComponent<GridBlockProps> = ({
@@ -13,8 +15,8 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
     <button
       onClick={onClick}
       className={classNames(className, {
-        '-x': type === 'x',
-        '-o': type === 'o',
+        '-x': type === Player.x,
+        '-o': type === Player.o,
       })}
     >
       {type}
@@ -23,7 +25,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
 };
 
 interface GridBlockProps {
-  type?: 'x' | 'o';
+  type?: Player;
   onClick?: () => void;
 }
 

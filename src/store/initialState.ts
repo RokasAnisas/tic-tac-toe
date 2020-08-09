@@ -1,5 +1,5 @@
-import { ApplicationState, Player, GridBlockType } from './types';
-import { gridSize } from '@/constants/gridSize';
+import { ApplicationState, GridBlockType } from './types';
+import { gridSize, Player } from '@/constants';
 
 const initialGrid = (): GridBlockType[] => {
   const _grid = [];
