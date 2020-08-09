@@ -7,30 +7,30 @@ describe('checkWinner', () => {
   const falseyGrid: GridBlockType[] = [
     {
       active: true,
-      player: Player.o
+      player: Player.o,
     },
     {
       active: true,
-      player: Player.o
+      player: Player.o,
     },
     {
       active: true,
-      player: Player.x
+      player: Player.x,
     },
   ];
 
   const winnerO: GridBlockType[] = [
     {
       active: true,
-      player: Player.o
+      player: Player.o,
     },
     {
       active: true,
-      player: Player.o
+      player: Player.o,
     },
     {
       active: true,
-      player: Player.o
+      player: Player.o,
     },
   ];
 

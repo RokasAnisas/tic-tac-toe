@@ -7,7 +7,7 @@ const Omark: FunctionComponent = () => {
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>o</h1>
+      <div className={`${className}__circle`} />
     </div>
   );
 };
