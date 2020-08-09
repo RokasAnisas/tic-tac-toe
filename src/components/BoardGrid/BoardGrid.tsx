@@ -1,17 +1,20 @@
 import React, { FunctionComponent } from 'react';
 
-import GridBlock from '@/components/GridBlock';
+import { GridBlock } from '@/store/types';
+
+import { default as GridBlockComponent } from '@/components/GridBlock';
 
 import './BoardGrid.scss';
 
-const BoardGrid: FunctionComponent = () => {
+const BoardGrid: FunctionComponent<BoardGridProps> = ({
+  blocks,
+}: BoardGridProps) => {
   const className = 'board-grid';
-  const itemsCount = Array.from(Array(9).keys());
 
-  const renderBlocks = itemsCount.map((items: number, index) => {
+  const renderBlocks = blocks.map((item: GridBlock, index) => {
     return (
       <div key={index} className={`${className}__block`}>
-        <GridBlock />
+        <GridBlockComponent />
       </div>
     );
   });
@@ -28,11 +31,13 @@ const BoardGrid: FunctionComponent = () => {
           <div className={`${className}__line -vertical`} />
         </div>
       </div>
-      <div className={`${className}__blocks-container`}>
-        {renderBlocks}
-      </div>
+      <div className={`${className}__blocks-container`}>{renderBlocks}</div>
     </div>
   );
 };
+
+interface BoardGridProps {
+  blocks: GridBlock[];
+}
 
 export default BoardGrid;

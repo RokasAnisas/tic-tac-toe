@@ -1,6 +1,8 @@
 import { Player } from './player';
 
-export interface GridBlock {
+interface GridBlockType {
   player: Player;
   active: boolean;
 }
+
+export type GridBlock = GridBlockType | undefined;

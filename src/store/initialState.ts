@@ -1,6 +1,6 @@
-import { ApplicationState, Player } from './types';
+import { ApplicationState, Player, GridBlock } from './types';
 
-const initialGrid = (): undefined[] => {
+const initialGrid = (): GridBlock[] => {
   const _grid = [];
   for (let i = 0; i < 9; i++) {
     _grid.push(undefined);
