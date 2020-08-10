@@ -2,6 +2,15 @@
   background-color: color('secondary');
   border-radius: radius('primary');
   display: flex;
+  left: 50%;
   padding: spacing('m');
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%) translateY(-100%);
+  transition: transition([transform], duration('slow'));
   width: size('max-width');
+
+  &.is-active {
+    transform: translateX(-50%) translateY(spacing('l'));
+  }
 }
