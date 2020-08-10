@@ -27,12 +27,18 @@ export interface HideConfirmDialog {
   type: ActionTypes.hideConfirmDialog;
 }
 
+export interface SetGridLock {
+  type: ActionTypes.setGridLock;
+  payload: boolean;
+}
+
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
   updateGrid = 'UpdateGrid',
   resetGrid = 'ResetGrid',
   showConfirmDialog = 'ShowConfirmDialog',
   hideConfirmDialog = 'HideConfirmDialog',
+  setGridLock = 'SetGridLock',
 }
 
 export type Actions =
@@ -40,4 +46,5 @@ export type Actions =
   | UpdateGrid
   | ResetGrid
   | ShowConfirmDialog
-  | HideConfirmDialog;
+  | HideConfirmDialog
+  | SetGridLock;

@@ -24,3 +24,7 @@ export const ShowConfirmDialog = (payload: ConfirmDialogPayload): void => {
 export const HideConfirmDialog = (): void => {
   store.dispatch({ type: ActionTypes.hideConfirmDialog });
 };
+
+export const SetGridLock = (payload: boolean): void => {
+  store.dispatch({ type: ActionTypes.setGridLock, payload: payload });
+};

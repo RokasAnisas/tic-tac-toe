@@ -7,6 +7,7 @@ import {
   SetActivePlayer,
   ResetGrid,
   ShowConfirmDialog,
+  SetGridLock
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
@@ -17,6 +18,7 @@ const BoardGridContainer: FunctionComponent = () => {
     (state: ApplicationState) => state.activePlayer
   );
   const grid = useSelector((state: ApplicationState) => state.grid);
+  const gridLock = useSelector((state: ApplicationState) => state.gridLock);
 
   const onItemClick = (id: number) => {
     UpdateGrid({
@@ -40,13 +42,14 @@ const BoardGridContainer: FunctionComponent = () => {
     const tie = checkTie(grid);
 
     if (winner) {
+      SetGridLock(true);
       ShowConfirmDialog({
         message: `${winner} Wins!`,
         action: () => ResetGrid(),
       });
     }
     if (tie) {
-      // ResetGrid();
+      SetGridLock(true);
       ShowConfirmDialog({
         message: `${winner} Wins!`,
         action: () => ResetGrid(),
@@ -54,7 +57,9 @@ const BoardGridContainer: FunctionComponent = () => {
     }
   }, [grid]);
 
-  return <BoardGrid blocks={grid} onItemClick={onItemClick} />;
+  return (
+    <BoardGrid blocks={grid} onItemClick={onItemClick} locked={gridLock} />
+  );
 };
 
 export default BoardGridContainer;

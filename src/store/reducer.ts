@@ -41,6 +41,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         },
       };
     }
+    case ActionTypes.setGridLock: {
+      return {
+        ...state,
+        gridLock: action.payload,
+      };
+    }
     default: {
       return state;
     }
