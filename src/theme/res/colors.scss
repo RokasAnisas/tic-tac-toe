@@ -3,10 +3,8 @@ $color-light: #fff;
 
 $theme-colors: (
   'accent': #12CEC7,
-  'dark': $color-dark,
-  'light': $color-light,
-  'background': $color-light,
-  'gray': #707070,
+  'constrast': $color-dark,
+  'key': $color-light,
 );
 
 @function color($_key) {
