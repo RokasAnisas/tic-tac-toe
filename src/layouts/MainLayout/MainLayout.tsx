@@ -1,5 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
+import ConfirmDialog from '@/components/ConfirmDialog';
+
 import './MainLayout.scss';
 
 const MainLayout: FunctionComponent<MainLayoutProps> = ({
@@ -9,6 +11,9 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({
 
   return (
     <div className={className}>
+      <div className={`${className}__confirm-dialog`}>
+        <ConfirmDialog />
+      </div>
       <div className={`${className}__body`}>{children}</div>
     </div>
   );

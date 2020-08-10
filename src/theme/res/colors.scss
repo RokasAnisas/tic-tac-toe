@@ -6,6 +6,7 @@ $theme-colors: (
   'accent': $color-accent,
   'contrast': $color-contrast,
   'key': $color-key,
+  'secondary': darken($color-key, 10%),
 );
 
 @function color($_key) {

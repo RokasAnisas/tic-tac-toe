@@ -5,4 +5,14 @@
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
+
+  &__confirm-dialog {
+    position: fixed;
+    top: spacing('l');
+    z-index: z-index('modal');
+  }
+
+  &__body {
+    display: block;
+  }
 }

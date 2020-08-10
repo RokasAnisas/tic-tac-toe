@@ -1,7 +1,5 @@
 $sizes-map: (
-  'max-mobile': 80vw,
-  'max-tablet': 600px,
-  'max-desktop': 600px,
+  'max-width': 60vmin,
 );
 
 @function size($_key) {

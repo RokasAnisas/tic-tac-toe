@@ -9,8 +9,8 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>ConfirmDialog</h1>
       <div className={`${className}__body`}>{children}</div>
+      <button className={`${className}__action`}>Play again</button>
     </div>
   );
 };
