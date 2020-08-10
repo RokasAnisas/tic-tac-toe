@@ -6,11 +6,11 @@ export const SetActivePlayer = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.setActivePlayer, payload: payload });
 };
 
-export const UpdateGrid = (payload: {
+export const UpdateGridItem = (payload: {
   content: GridBlockType;
   id: number;
 }): void => {
-  store.dispatch({ type: ActionTypes.updateGrid, payload: payload });
+  store.dispatch({ type: ActionTypes.UpdateGridItem, payload: payload });
 };
 
 export const ResetGrid = (): void => {

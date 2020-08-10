@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { checkWinner, checkTie } from '@/utils';
 import {
-  UpdateGrid,
+  UpdateGridItem,
   SetActivePlayer,
   ResetGrid,
   ShowConfirmDialog,
@@ -21,7 +21,7 @@ const BoardGridContainer: FunctionComponent = () => {
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
 
   const onItemClick = (id: number) => {
-    UpdateGrid({
+    UpdateGridItem({
       id: id,
       content: {
         player: activePlayer,

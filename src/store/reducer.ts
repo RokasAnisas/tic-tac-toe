@@ -10,7 +10,7 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         activePlayer: action.payload,
       };
     }
-    case ActionTypes.updateGrid: {
+    case ActionTypes.UpdateGridItem: {
       return {
         ...state,
         grid: state.grid.map((item, index) =>
