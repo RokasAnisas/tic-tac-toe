@@ -1,13 +1,21 @@
+%perspective {
+  transform: rotateX(45deg);
+  transform-style: preserve-3d;
+}
+
 .board-grid {
   $_grid-size: 60vmin;
   $_grid-item-size: calc(100% / 3);
 
   height: $_grid-size;
+  perspective: 450px;
   position: relative;
   width: $_grid-size;
   z-index: z-index('base');
 
   &__blocks-container {
+    @extend %perspective;
+
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -20,6 +28,8 @@
   }
 
   &__lines {
+    @extend %perspective;
+
     height: 100%;
     left: 0;
     overflow: hidden;
