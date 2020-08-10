@@ -35,4 +35,9 @@ export enum ActionTypes {
   hideConfirmDialog = 'HideConfirmDialog',
 }
 
-export type Actions = SetActivePlayer | UpdateGrid | ResetGrid | ShowConfirmDialog | HideConfirmDialog;
+export type Actions =
+  | SetActivePlayer
+  | UpdateGrid
+  | ResetGrid
+  | ShowConfirmDialog
+  | HideConfirmDialog;
