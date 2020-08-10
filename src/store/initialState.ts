@@ -12,6 +12,10 @@ const initialGrid = (): GridBlockType[] => {
 const initialState: ApplicationState = {
   activePlayer: Player.x,
   grid: initialGrid(),
+  confirmDialog: {
+    active: false,
+  },
+  gridLock: false,
 };
 
 export default initialState;

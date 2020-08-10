@@ -9,6 +9,7 @@ import './GridBlock.scss';
 const GridBlock: FunctionComponent<GridBlockProps> = ({
   type,
   onClick,
+  disabled,
 }: GridBlockProps) => {
   const className = 'grid-block';
 
@@ -25,7 +26,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   };
 
   return (
-    <button onClick={onClick} className={className}>
+    <button onClick={onClick} className={className} disabled={disabled}>
       {renderMark()}
     </button>
   );
@@ -34,6 +35,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
 export interface GridBlockProps {
   type?: Player;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export default GridBlock;

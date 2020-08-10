@@ -1,0 +1,20 @@
+.button {
+  background-color: color('accent');
+  border-radius: radius('primary');
+  color: color('key');
+  cursor: pointer;
+  display: flex;
+  font-family: font-family('body');
+  font-size: font-size('s');
+  font-weight: 400;
+  padding: spacing('s') spacing('s') * 2;
+  transition: transition([background-color]);
+
+  &:hover {
+    background-color: darken(color('accent'), 10%);
+  }
+
+  &:active {
+    background-color: darken(color('accent'), 20%);
+  }
+}

@@ -1,0 +1,7 @@
+$radius-map: (
+  'primary': 10px,
+);
+
+@function radius($_key) {
+  @return map-get($radius-map, $_key);
+}

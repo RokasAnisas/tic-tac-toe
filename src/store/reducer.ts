@@ -24,6 +24,29 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         grid: initialState.grid,
       };
     }
+    case ActionTypes.showConfirmDialog: {
+      return {
+        ...state,
+        confirmDialog: {
+          active: true,
+          ...action.payload,
+        },
+      };
+    }
+    case ActionTypes.hideConfirmDialog: {
+      return {
+        ...state,
+        confirmDialog: {
+          active: false,
+        },
+      };
+    }
+    case ActionTypes.setGridLock: {
+      return {
+        ...state,
+        gridLock: action.payload,
+      };
+    }
     default: {
       return state;
     }
