@@ -24,7 +24,6 @@ const BoardGridContainer: FunctionComponent = () => {
     UpdateGrid({
       id: id,
       content: {
-        active: true,
         player: activePlayer,
       },
     });
