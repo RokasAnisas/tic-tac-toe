@@ -3,8 +3,7 @@
   position: relative;
   width: 100%;
 
-  &__cross {
-    background-color: color('dark');
+  &__line-container {
     height: 100%;
     left: 50%;
     position: absolute;
@@ -17,6 +16,23 @@
 
     &.-b {
       transform: rotateZ(-45deg);
+    }
+  }
+
+  &__line {
+    animation: enterLine 1.2s ease forwards;
+    background-color: color('dark');
+    height: 100%;
+    transform-origin: 0% 0%;
+    width: 1px;
+  }
+
+  @keyframes enterLine {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
     }
   }
 }

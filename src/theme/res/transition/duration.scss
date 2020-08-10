@@ -1,0 +1,8 @@
+$duration-map: (
+  'cta': 0.3s,
+  'slow': 1.2s,
+);
+
+@function duration($_key) {
+  @return map-get($duration-map, $_key);
+}
