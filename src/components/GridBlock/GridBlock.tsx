@@ -38,7 +38,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   );
 };
 
-interface GridBlockProps {
+export interface GridBlockProps {
   type?: Player;
   onClick?: () => void;
 }
