@@ -27,7 +27,10 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
     case ActionTypes.showConfirmDialog: {
       return {
         ...state,
-        confirmDialog: action.payload,
+        confirmDialog: {
+          active: true,
+          ...action.payload,
+        },
       };
     }
     case ActionTypes.hideConfirmDialog: {

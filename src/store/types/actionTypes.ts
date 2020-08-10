@@ -1,5 +1,5 @@
 import { Player } from '@/constants';
-import { GridBlockType, ConfirmDialogType } from './';
+import { GridBlockType, ConfirmDialogPayload } from './';
 
 export interface SetActivePlayer {
   type: ActionTypes.setActivePlayer;
@@ -20,7 +20,7 @@ export interface ResetGrid {
 
 export interface ShowConfirmDialog {
   type: ActionTypes.showConfirmDialog;
-  payload: ConfirmDialogType;
+  payload: ConfirmDialogPayload;
 }
 
 export interface HideConfirmDialog {

@@ -41,7 +41,6 @@ const BoardGridContainer: FunctionComponent = () => {
 
     if (winner) {
       ShowConfirmDialog({
-        active: true,
         message: `${winner} Wins!`,
         action: () => ResetGrid(),
       });
@@ -49,7 +48,6 @@ const BoardGridContainer: FunctionComponent = () => {
     if (tie) {
       // ResetGrid();
       ShowConfirmDialog({
-        active: true,
         message: `${winner} Wins!`,
         action: () => ResetGrid(),
       });
