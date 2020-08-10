@@ -20,3 +20,7 @@ export const ResetGrid = (): void => {
 export const ShowConfirmDialog = (payload: ConfirmDialogType): void => {
   store.dispatch({ type: ActionTypes.showConfirmDialog, payload: payload });
 };
+
+export const HideConfirmDialog = (): void => {
+  store.dispatch({ type: ActionTypes.hideConfirmDialog });
+};

@@ -30,6 +30,14 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         confirmDialog: action.payload,
       };
     }
+    case ActionTypes.hideConfirmDialog: {
+      return {
+        ...state,
+        confirmDialog: {
+          active: false
+        },
+      };
+    }
     default: {
       return state;
     }

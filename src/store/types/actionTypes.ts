@@ -23,11 +23,16 @@ export interface ShowConfirmDialog {
   payload: ConfirmDialogType;
 }
 
+export interface HideConfirmDialog {
+  type: ActionTypes.hideConfirmDialog;
+}
+
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
   updateGrid = 'UpdateGrid',
   resetGrid = 'ResetGrid',
   showConfirmDialog = 'ShowConfirmDialog',
+  hideConfirmDialog = 'HideConfirmDialog',
 }
 
-export type Actions = SetActivePlayer | UpdateGrid | ResetGrid | ShowConfirmDialog;
+export type Actions = SetActivePlayer | UpdateGrid | ResetGrid | ShowConfirmDialog | HideConfirmDialog;
