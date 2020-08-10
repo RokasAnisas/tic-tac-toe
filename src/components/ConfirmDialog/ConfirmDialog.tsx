@@ -1,5 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
+import Button from '@/components/Button';
+
 import './ConfirmDialog.scss';
 
 const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
@@ -10,7 +12,7 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
   return (
     <div className={className}>
       <div className={`${className}__body`}>{children}</div>
-      <button className={`${className}__action`}>Play again</button>
+      <Button label="play again" />
     </div>
   );
 };
