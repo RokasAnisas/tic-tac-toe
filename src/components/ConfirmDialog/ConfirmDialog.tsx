@@ -7,7 +7,7 @@ import './ConfirmDialog.scss';
 
 const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
   children,
-  active
+  active,
 }: ConfirmDialogProps) => {
   const className = 'confirm-dialog';
 
