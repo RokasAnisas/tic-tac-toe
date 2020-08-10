@@ -18,7 +18,7 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
         'is-active': active,
       })}
     >
-      <div className={`${className}__body`}>{message}</div>
+      <span className={`${className}__message`}>{message}</span>
       <Button label="play again" onClick={onConfirm} />
     </div>
   );

@@ -1,7 +1,9 @@
 .confirm-dialog {
+  align-items: center;
   background-color: color('secondary');
   border-radius: radius('primary');
   display: flex;
+  justify-content: space-between;
   left: 50%;
   padding: spacing('m');
   position: fixed;
@@ -9,6 +11,11 @@
   transform: translateX(-50%) translateY(-100%);
   transition: transition([transform], duration('fast'));
   width: size('max-width');
+
+  &__message {
+    color: color('secondary-active');
+    font-weight: 700;
+  }
 
   &.is-active {
     transform: translateX(-50%) translateY(spacing('l'));

@@ -7,7 +7,7 @@ $theme-colors: (
   'contrast': $color-contrast,
   'key': $color-key,
   'secondary': darken($color-key, 5%),
-  'secondary-active': darken($color-key, 15%),
+  'secondary-active': darken($color-key, 40%),
 );
 
 @function color($_key) {
