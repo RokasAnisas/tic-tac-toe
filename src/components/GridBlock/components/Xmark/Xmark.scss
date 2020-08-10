@@ -1,0 +1,38 @@
+.x-mark {
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  &__line-container {
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 1px;
+
+    &.-a {
+      transform: rotateZ(45deg);
+    }
+
+    &.-b {
+      transform: rotateZ(-45deg);
+    }
+  }
+
+  &__line {
+    animation: enterLine duration('slow') ease forwards;
+    background-color: color('contrast');
+    height: 100%;
+    transform-origin: 0% 0%;
+    width: 1px;
+  }
+
+  @keyframes enterLine {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+}
