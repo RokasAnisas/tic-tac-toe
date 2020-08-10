@@ -1,8 +1,17 @@
 .main-layout {
   align-items: center;
-  background-color: color('background');
+  background-color: color('key');
   display: flex;
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
+
+  &__confirm-dialog {
+    position: fixed;
+    z-index: z-index('modal');
+  }
+
+  &__body {
+    display: block;
+  }
 }

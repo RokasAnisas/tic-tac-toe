@@ -7,8 +7,12 @@ const Xmark: FunctionComponent = () => {
 
   return (
     <div className={className}>
-      <div className={`${className}__cross -a`} />
-      <div className={`${className}__cross -b`} />
+      <div className={`${className}__line-container -a`}>
+        <div className={`${className}__line`} />
+      </div>
+      <div className={`${className}__line-container -b`}>
+        <div className={`${className}__line`} />
+      </div>
     </div>
   );
 };

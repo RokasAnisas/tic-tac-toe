@@ -9,20 +9,23 @@ import './BoardGrid.scss';
 const BoardGrid: FunctionComponent<BoardGridProps> = ({
   blocks,
   onItemClick,
+  locked,
 }: BoardGridProps) => {
   const className = 'board-grid';
 
   const renderBlocks = blocks.map((item: GridBlockType, index) => {
+    const onItemClickHandler = () => !locked && onItemClick(index);
+
     if (!item) {
       return (
         <div key={index} className={`${className}__block`}>
-          <GridBlock onClick={() => onItemClick(index)} />
+          <GridBlock onClick={onItemClickHandler} disabled={locked} />
         </div>
       );
     }
     return (
       <div key={index} className={`${className}__block`}>
-        <GridBlock type={item.player} />
+        <GridBlock type={item.player} disabled={locked} />
       </div>
     );
   });
@@ -47,6 +50,7 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
 interface BoardGridProps {
   blocks: GridBlockType[];
   onItemClick: (id: number) => void;
+  locked?: boolean;
 }
 
 export default BoardGrid;

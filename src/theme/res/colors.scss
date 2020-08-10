@@ -1,12 +1,13 @@
-$color-dark: #0a0a0a;
-$color-light: #fff;
+$color-contrast: #0a0a0a;
+$color-key: #fff;
+$color-accent: #12cec7;
 
 $theme-colors: (
-  'accent': #12CEC7,
-  'dark': $color-dark,
-  'light': $color-light,
-  'background': $color-light,
-  'gray': #707070,
+  'accent': $color-accent,
+  'contrast': $color-contrast,
+  'key': $color-key,
+  'secondary': darken($color-key, 5%),
+  'secondary-active': darken($color-key, 40%),
 );
 
 @function color($_key) {
