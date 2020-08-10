@@ -8,14 +8,16 @@ import ConfirmDialog from '@/components/ConfirmDialog';
 const ConfirmDialogContainer: FunctionComponent<ConfirmDialogContainerProps> = ({
   condfirmDialog,
 }: ConfirmDialogContainerProps) => {
-  const { active, action } = condfirmDialog;
+  const { active, action, message } = condfirmDialog;
 
   const onConfirm = () => {
     action && action();
     HideConfirmDialog();
   };
 
-  return <ConfirmDialog active={active} onConfirm={onConfirm} />;
+  return (
+    <ConfirmDialog message={message} active={active} onConfirm={onConfirm} />
+  );
 };
 
 interface ConfirmDialogContainerProps {

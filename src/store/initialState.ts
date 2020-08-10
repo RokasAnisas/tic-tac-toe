@@ -15,7 +15,7 @@ const initialState: ApplicationState = {
   confirmDialog: {
     active: false,
   },
-  gridLock: false
+  gridLock: false,
 };
 
 export default initialState;

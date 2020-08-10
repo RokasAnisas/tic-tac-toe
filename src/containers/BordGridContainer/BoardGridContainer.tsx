@@ -7,7 +7,7 @@ import {
   SetActivePlayer,
   ResetGrid,
   ShowConfirmDialog,
-  SetGridLock
+  SetGridLock,
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
@@ -41,18 +41,17 @@ const BoardGridContainer: FunctionComponent = () => {
     const winner = checkWinner(grid);
     const tie = checkTie(grid);
 
-    if (winner) {
+    if (winner || tie) {
+      const message = winner ? `${winner.toUpperCase()} Wins!` : 'Tie';
+      const onDialogConfirm = () => {
+        ResetGrid();
+        SetGridLock(false);
+      };
+
       SetGridLock(true);
       ShowConfirmDialog({
-        message: `${winner} Wins!`,
-        action: () => ResetGrid(),
-      });
-    }
-    if (tie) {
-      SetGridLock(true);
-      ShowConfirmDialog({
-        message: `${winner} Wins!`,
-        action: () => ResetGrid(),
+        message: message,
+        action: onDialogConfirm,
       });
     }
   }, [grid]);

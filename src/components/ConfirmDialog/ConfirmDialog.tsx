@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 
 import Button from '@/components/Button';
@@ -6,7 +6,7 @@ import Button from '@/components/Button';
 import './ConfirmDialog.scss';
 
 const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
-  children,
+  message,
   active,
   onConfirm,
 }: ConfirmDialogProps) => {
@@ -18,14 +18,14 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
         'is-active': active,
       })}
     >
-      <div className={`${className}__body`}>{children}</div>
+      <div className={`${className}__body`}>{message}</div>
       <Button label="play again" onClick={onConfirm} />
     </div>
   );
 };
 
 interface ConfirmDialogProps {
-  children?: ReactNode;
+  message?: string;
   active?: boolean;
   onConfirm?: () => void;
 }
