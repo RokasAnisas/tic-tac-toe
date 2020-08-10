@@ -24,6 +24,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         grid: initialState.grid,
       };
     }
+    case ActionTypes.showConfirmDialog: {
+      return {
+        ...state,
+        confirmDialog: action.payload,
+      };
+    }
     default: {
       return state;
     }

@@ -1,5 +1,5 @@
 import { Player } from '@/constants';
-import { GridBlockType } from './';
+import { GridBlockType, ConfirmDialogType } from './';
 
 export interface SetActivePlayer {
   type: ActionTypes.setActivePlayer;
@@ -18,10 +18,16 @@ export interface ResetGrid {
   type: ActionTypes.resetGrid;
 }
 
+export interface ShowConfirmDialog {
+  type: ActionTypes.showConfirmDialog;
+  payload: ConfirmDialogType;
+}
+
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
   updateGrid = 'UpdateGrid',
   resetGrid = 'ResetGrid',
+  showConfirmDialog = 'ShowConfirmDialog',
 }
 
-export type Actions = SetActivePlayer | UpdateGrid | ResetGrid;
+export type Actions = SetActivePlayer | UpdateGrid | ResetGrid | ShowConfirmDialog;

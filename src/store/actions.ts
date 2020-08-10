@@ -1,6 +1,6 @@
 import store from './store';
 import { Player } from '@/constants';
-import { ActionTypes, GridBlockType } from './types';
+import { ActionTypes, GridBlockType, ConfirmDialogType } from './types';
 
 export const SetActivePlayer = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.setActivePlayer, payload: payload });
@@ -15,4 +15,8 @@ export const UpdateGrid = (payload: {
 
 export const ResetGrid = (): void => {
   store.dispatch({ type: ActionTypes.resetGrid });
+};
+
+export const ShowConfirmDialog = (payload: ConfirmDialogType): void => {
+  store.dispatch({ type: ActionTypes.showConfirmDialog, payload: payload });
 };

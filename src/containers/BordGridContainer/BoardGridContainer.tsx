@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { checkWinner, checkTie } from '@/utils';
-import { UpdateGrid, SetActivePlayer, ResetGrid } from '@/store/actions';
+import { UpdateGrid, SetActivePlayer, ResetGrid, ShowConfirmDialog } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
 import { Player } from '@/constants';
@@ -35,12 +35,19 @@ const BoardGridContainer: FunctionComponent = () => {
     const tie = checkTie(grid);
 
     if (winner) {
-      alert(`${winner} Wins!`);
-      ResetGrid();
+      ShowConfirmDialog({
+        active: true,
+        message: `${winner} Wins!`,
+        action: () => ResetGrid(),
+      });
     }
     if (tie) {
-      alert(`Tie!`);
-      ResetGrid();
+      // ResetGrid();
+      ShowConfirmDialog({
+        active: true,
+        message: `${winner} Wins!`,
+        action: () => ResetGrid(),
+      });
     }
   }, [grid]);
 
