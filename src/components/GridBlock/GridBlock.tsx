@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
 
 import { Player } from '@/constants/player';
 import Xmark from './components/Xmark';
@@ -26,13 +25,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   };
 
   return (
-    <button
-      onClick={onClick}
-      className={classNames(className, {
-        '-x': type === Player.x,
-        '-o': type === Player.o,
-      })}
-    >
+    <button onClick={onClick} className={className}>
       {renderMark()}
     </button>
   );
