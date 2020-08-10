@@ -20,7 +20,7 @@ const Omark: FunctionComponent = () => {
             cx="50"
             cy="50"
             r="50"
-            strokeWidth={1.5}
+            strokeWidth={2}
           />
         </g>
       </svg>
