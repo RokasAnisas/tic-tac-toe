@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 
 import { Player } from '@/constants/player';
 import GridBlock, { GridBlockProps } from './GridBlock';
-import Omark from './components/Omark';
-import Xmark from './components/Xmark';
+import Xmark from '@/components/Xmark';
+import Omark from '@/components/Omark';
 
 describe('GridBlock component', () => {
   const defaultProps: GridBlockProps = {

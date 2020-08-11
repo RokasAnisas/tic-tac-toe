@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "lint": "stylelint  **/*.scss && eslint \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
+    "lint": "stylelint **/*.scss && eslint \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "test": "jest",
     "docz:dev": "docz dev",

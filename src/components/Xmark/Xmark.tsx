@@ -3,7 +3,11 @@ import classNames from 'classnames';
 
 import './Xmark.scss';
 
-const Xmark: FunctionComponent<XmarkProps> = ({ win }: XmarkProps) => {
+const Xmark: FunctionComponent<XmarkProps> = ({
+  win,
+  animated,
+  invert,
+}: XmarkProps) => {
   const className = 'x-mark';
 
   return (
@@ -12,6 +16,8 @@ const Xmark: FunctionComponent<XmarkProps> = ({ win }: XmarkProps) => {
         <div
           className={classNames(`${className}__line`, {
             '-win': win,
+            '-animated': animated,
+            '-invert': invert,
           })}
         />
       </div>
@@ -19,6 +25,8 @@ const Xmark: FunctionComponent<XmarkProps> = ({ win }: XmarkProps) => {
         <div
           className={classNames(`${className}__line`, {
             '-win': win,
+            '-animated': animated,
+            '-invert': invert,
           })}
         />
       </div>
@@ -28,6 +36,8 @@ const Xmark: FunctionComponent<XmarkProps> = ({ win }: XmarkProps) => {
 
 interface XmarkProps {
   win?: boolean;
+  animated?: boolean;
+  invert?: boolean;
 }
 
 export default Xmark;

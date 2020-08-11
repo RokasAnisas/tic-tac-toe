@@ -3,7 +3,12 @@ import classNames from 'classnames';
 
 import './Omark.scss';
 
-const Omark: FunctionComponent<OmarkProps> = ({ win }: OmarkProps) => {
+const Omark: FunctionComponent<OmarkProps> = ({
+  win,
+  animated,
+  small,
+  invert,
+}: OmarkProps) => {
   const className = 'o-mark';
 
   return (
@@ -18,7 +23,10 @@ const Omark: FunctionComponent<OmarkProps> = ({ win }: OmarkProps) => {
         <g>
           <circle
             className={classNames(`${className}__elipse`, {
-              '-win': win
+              '-win': win,
+              '-animated': animated,
+              '-small': small,
+              '-invert': invert,
             })}
             cx="50"
             cy="50"
@@ -32,6 +40,9 @@ const Omark: FunctionComponent<OmarkProps> = ({ win }: OmarkProps) => {
 
 interface OmarkProps {
   win?: boolean;
+  animated?: boolean;
+  small?: boolean;
+  invert?: boolean;
 }
 
 export default Omark;

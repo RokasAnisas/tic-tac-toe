@@ -16,16 +16,27 @@
   }
 
   &__elipse {
-    animation: elipseEnter duration('slow') ease forwards;
     fill: none;
-    stroke: rgba(color('contrast'), 0.8);
+    stroke: color('contrast');
     stroke-dasharray: 380;
     stroke-width: 2px;
     transform-origin: 50% 50%;
     transition: transition([stroke]);
 
+    &.-small {
+      stroke-width: 4px;
+    }
+
+    &.-invert {
+      stroke: color('key');
+    }
+
     &.-win {
       stroke: color('accent');
+    }
+
+    &.-animated {
+      animation: elipseEnter duration('slow') ease forwards;
     }
   }
 

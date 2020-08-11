@@ -20,7 +20,6 @@
   }
 
   &__line {
-    animation: enterLine duration('slow') ease forwards;
     background-color: color('contrast');
     height: 100%;
     transform-origin: 0% 0%;
@@ -29,7 +28,14 @@
 
     &.-win {
       background-color: color('accent');
-      width: 1px;
+    }
+
+    &.-invert {
+      background-color: color('key');
+    }
+
+    &.-animated {
+      animation: enterLine duration('slow') ease forwards;
     }
   }
 

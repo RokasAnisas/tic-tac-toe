@@ -32,3 +32,7 @@ export const HideConfirmDialog = (): void => {
 export const SetGridLock = (payload: boolean): void => {
   store.dispatch({ type: ActionTypes.setGridLock, payload: payload });
 };
+
+export const BumpScore = (payload: Player): void => {
+  store.dispatch({ type: ActionTypes.bumpScore, payload: payload });
+};
