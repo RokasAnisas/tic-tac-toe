@@ -41,7 +41,9 @@ const BoardGridContainer: FunctionComponent = () => {
     const tie = checkTie(grid);
 
     if (winner || tie) {
-      const message = winner ? `${winner.toUpperCase()} ${Messages.win}` : Messages.tie;
+      const message = winner
+        ? `${winner.player!.toUpperCase()} ${Messages.win}`
+        : Messages.tie;
       const onDialogConfirm = () => {
         ResetGrid();
         SetGridLock(false);
