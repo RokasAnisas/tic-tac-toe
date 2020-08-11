@@ -28,7 +28,7 @@ describe('GridBlock component', () => {
     expect(wrapper.containsMatchingElement(<Xmark />)).toEqual(true);
   });
 
-  it('onClick function should be called', () => {
+  it('should have onClick function be called', () => {
     const testClick = jest.fn();
 
     const wrapper = createWrapper({
@@ -37,5 +37,13 @@ describe('GridBlock component', () => {
 
     wrapper.simulate('click');
     expect(testClick).toBeCalled();
+  });
+
+  it('should be disabled', () => {
+    const wrapper = createWrapper({
+      disabled: true,
+    });
+
+    expect(wrapper.prop('disabled')).toBe(true);
   });
 });

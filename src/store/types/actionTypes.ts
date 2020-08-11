@@ -6,12 +6,17 @@ export interface SetActivePlayer {
   payload: Player;
 }
 
-export interface UpdateGrid {
-  type: ActionTypes.updateGrid;
+export interface UpdateGridItem {
+  type: ActionTypes.updateGridItem;
   payload: {
     id: number;
     content: GridBlockType;
   };
+}
+
+export interface SetGrid {
+  type: ActionTypes.setGrid;
+  payload: GridBlockType[];
 }
 
 export interface ResetGrid {
@@ -34,7 +39,8 @@ export interface SetGridLock {
 
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
-  updateGrid = 'UpdateGrid',
+  updateGridItem = 'UpdateGridItem',
+  setGrid = 'SetGrid',
   resetGrid = 'ResetGrid',
   showConfirmDialog = 'ShowConfirmDialog',
   hideConfirmDialog = 'HideConfirmDialog',
@@ -43,7 +49,8 @@ export enum ActionTypes {
 
 export type Actions =
   | SetActivePlayer
-  | UpdateGrid
+  | UpdateGridItem
+  | SetGrid
   | ResetGrid
   | ShowConfirmDialog
   | HideConfirmDialog
