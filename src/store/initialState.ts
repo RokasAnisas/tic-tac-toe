@@ -19,7 +19,7 @@ const initialState: ApplicationState = {
   score: {
     x: 0,
     o: 0,
-  }
+  },
 };
 
 export default initialState;
