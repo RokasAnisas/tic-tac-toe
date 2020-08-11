@@ -5,4 +5,4 @@ interface GridBlock {
   win?: boolean;
 }
 
-export type GridBlockType = GridBlock | undefined;
+export type GridBlockType = GridBlock | null;

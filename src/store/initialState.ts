@@ -4,7 +4,7 @@ import { gridSize, Player } from '@/constants';
 const initialGrid = (): GridBlockType[] => {
   const _grid = [];
   for (let i = 0; i < gridSize; i++) {
-    _grid.push(undefined);
+    _grid.push(null);
   }
   return _grid;
 };
