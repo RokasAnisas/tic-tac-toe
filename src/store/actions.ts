@@ -6,11 +6,15 @@ export const SetActivePlayer = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.setActivePlayer, payload: payload });
 };
 
-export const UpdateGrid = (payload: {
+export const UpdateGridItem = (payload: {
   content: GridBlockType;
   id: number;
 }): void => {
-  store.dispatch({ type: ActionTypes.updateGrid, payload: payload });
+  store.dispatch({ type: ActionTypes.updateGridItem, payload: payload });
+};
+
+export const SetGrid = (payload: GridBlockType[]): void => {
+  store.dispatch({ type: ActionTypes.setGrid, payload: payload });
 };
 
 export const ResetGrid = (): void => {
@@ -27,4 +31,8 @@ export const HideConfirmDialog = (): void => {
 
 export const SetGridLock = (payload: boolean): void => {
   store.dispatch({ type: ActionTypes.setGridLock, payload: payload });
+};
+
+export const BumpScore = (payload: Player): void => {
+  store.dispatch({ type: ActionTypes.bumpScore, payload: payload });
 };

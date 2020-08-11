@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 
 import { Player } from '@/constants/player';
 import GridBlock, { GridBlockProps } from './GridBlock';
-import Omark from './components/Omark';
-import Xmark from './components/Xmark';
+import Xmark from '@/components/Xmark';
+import Omark from '@/components/Omark';
 
 describe('GridBlock component', () => {
   const defaultProps: GridBlockProps = {
@@ -28,7 +28,7 @@ describe('GridBlock component', () => {
     expect(wrapper.containsMatchingElement(<Xmark />)).toEqual(true);
   });
 
-  it('onClick function should be called', () => {
+  it('should have onClick function be called', () => {
     const testClick = jest.fn();
 
     const wrapper = createWrapper({
@@ -37,5 +37,13 @@ describe('GridBlock component', () => {
 
     wrapper.simulate('click');
     expect(testClick).toBeCalled();
+  });
+
+  it('should be disabled', () => {
+    const wrapper = createWrapper({
+      disabled: true,
+    });
+
+    expect(wrapper.prop('disabled')).toBe(true);
   });
 });

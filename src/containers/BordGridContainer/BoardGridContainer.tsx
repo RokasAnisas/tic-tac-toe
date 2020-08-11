@@ -3,15 +3,16 @@ import { useSelector } from 'react-redux';
 
 import { checkWinner, checkTie } from '@/utils';
 import {
-  UpdateGrid,
+  UpdateGridItem,
   SetActivePlayer,
   ResetGrid,
   ShowConfirmDialog,
   SetGridLock,
+  BumpScore
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
-import { Player } from '@/constants';
+import { Player, Messages } from '@/constants';
 
 const BoardGridContainer: FunctionComponent = () => {
   const activePlayer = useSelector(
@@ -21,10 +22,9 @@ const BoardGridContainer: FunctionComponent = () => {
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
 
   const onItemClick = (id: number) => {
-    UpdateGrid({
+    UpdateGridItem({
       id: id,
       content: {
-        active: true,
         player: activePlayer,
       },
     });
@@ -37,12 +37,26 @@ const BoardGridContainer: FunctionComponent = () => {
     SetActivePlayer(nextPlayer);
   };
 
+  const highlightWinningRow = (winCombo: number[]) => {
+    winCombo.forEach(winIndex => {
+      UpdateGridItem({
+        id: winIndex,
+        content: {
+          player: grid[winIndex]!.player,
+          win: true,
+        },
+      });
+    });
+  };
+
   useEffect(() => {
     const winner = checkWinner(grid);
     const tie = checkTie(grid);
 
     if (winner || tie) {
-      const message = winner ? `${winner.toUpperCase()} Wins!` : 'Tie';
+      const message = winner
+        ? `${winner.player!.toUpperCase()} ${Messages.win}`
+        : Messages.tie;
       const onDialogConfirm = () => {
         ResetGrid();
         SetGridLock(false);
@@ -55,6 +69,15 @@ const BoardGridContainer: FunctionComponent = () => {
       });
     }
   }, [grid]);
+
+  useEffect(() => {
+    const winner = checkWinner(grid);
+
+    if (winner) {
+      BumpScore(winner.player!);
+      highlightWinningRow(winner.combination);
+    }
+  }, [gridLock]);
 
   return (
     <BoardGrid blocks={grid} onItemClick={onItemClick} locked={gridLock} />

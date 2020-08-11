@@ -1,4 +1,4 @@
-import { GridBlockType, ConfirmDialogType } from './';
+import { GridBlockType, ConfirmDialogType, Score } from './';
 import { Player } from '@/constants';
 
 export interface ApplicationState {
@@ -6,4 +6,5 @@ export interface ApplicationState {
   grid: Array<GridBlockType>;
   confirmDialog: ConfirmDialogType;
   gridLock: boolean;
+  score: Score;
 }

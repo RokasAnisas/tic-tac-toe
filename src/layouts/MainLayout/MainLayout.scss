@@ -11,6 +11,11 @@
     z-index: z-index('modal');
   }
 
+  &__score-bar {
+    position: fixed;
+    top: spacing('l');
+  }
+
   &__body {
     display: block;
   }

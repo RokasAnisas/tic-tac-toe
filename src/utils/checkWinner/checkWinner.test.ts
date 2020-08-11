@@ -6,30 +6,24 @@ describe('checkWinner', () => {
   const emptyGrid: GridBlockType[] = [];
   const falseyGrid: GridBlockType[] = [
     {
-      active: true,
       player: Player.o,
     },
     {
-      active: true,
       player: Player.o,
     },
     {
-      active: true,
       player: Player.x,
     },
   ];
 
   const winnerO: GridBlockType[] = [
     {
-      active: true,
       player: Player.o,
     },
     {
-      active: true,
       player: Player.o,
     },
     {
-      active: true,
       player: Player.o,
     },
   ];
@@ -43,6 +37,11 @@ describe('checkWinner', () => {
   });
 
   it('should return the winner on correct grid', () => {
-    expect(checkWinner(winnerO)).toBe(Player.o);
+    const testResult = {
+      combination: [0, 1, 2],
+      player: Player.o,
+    };
+
+    expect(checkWinner(winnerO)).toStrictEqual(testResult);
   });
 });

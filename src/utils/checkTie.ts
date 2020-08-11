@@ -2,7 +2,7 @@ import { checkWinner } from './';
 import { GridBlockType } from '@/store/types';
 
 export const checkTie = (grid: GridBlockType[]): boolean => {
-  const allBlocksFilled = grid.every(item => item !== undefined);
+  const allBlocksFilled = grid.every(item => item !== null);
 
   if (allBlocksFilled) {
     const winner = checkWinner(grid);

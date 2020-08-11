@@ -2,7 +2,7 @@ import { Player } from '@/constants';
 
 interface GridBlock {
   player: Player;
-  active: boolean;
+  win?: boolean;
 }
 
-export type GridBlockType = GridBlock | undefined;
+export type GridBlockType = GridBlock | null;
