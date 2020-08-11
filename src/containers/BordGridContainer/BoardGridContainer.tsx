@@ -11,7 +11,7 @@ import {
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
-import { Player } from '@/constants';
+import { Player, Messages } from '@/constants';
 
 const BoardGridContainer: FunctionComponent = () => {
   const activePlayer = useSelector(
@@ -41,7 +41,7 @@ const BoardGridContainer: FunctionComponent = () => {
     const tie = checkTie(grid);
 
     if (winner || tie) {
-      const message = winner ? `${winner.toUpperCase()} Wins!` : 'Tie';
+      const message = winner ? `${winner.toUpperCase()} ${Messages.win}` : Messages.tie;
       const onDialogConfirm = () => {
         ResetGrid();
         SetGridLock(false);
