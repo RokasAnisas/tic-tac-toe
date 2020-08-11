@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
 import { Player } from '@/constants/player';
-import Xmark from './components/Xmark';
-import Omark from './components/Omark';
+import Xmark from '@/components/Xmark';
+import Omark from '@/components/Omark';
 
 import './GridBlock.scss';
 
