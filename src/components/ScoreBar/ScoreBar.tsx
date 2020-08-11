@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
+import { Player } from '@/constants';
 import ScorePill from '@/components/ScorePill';
 
 import './ScoreBar.scss';
@@ -12,10 +13,10 @@ const ScoreBar: FunctionComponent<ScoreBarProps> = ({
   return (
     <div className={className}>
       <div className={`${className}__pill-container`}>
-        <ScorePill />
+        <ScorePill player={Player.x} />
       </div>
       <div className={`${className}__pill-container`}>
-        <ScorePill />
+        <ScorePill player={Player.o} />
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import './Omark.scss';
 const Omark: FunctionComponent<OmarkProps> = ({
   win,
   animated,
+  small,
 }: OmarkProps) => {
   const className = 'o-mark';
 
@@ -23,6 +24,7 @@ const Omark: FunctionComponent<OmarkProps> = ({
             className={classNames(`${className}__elipse`, {
               '-win': win,
               '-animated': animated,
+              '-small': small,
             })}
             cx="50"
             cy="50"
@@ -37,6 +39,7 @@ const Omark: FunctionComponent<OmarkProps> = ({
 interface OmarkProps {
   win?: boolean;
   animated?: boolean;
+  small?: boolean;
 }
 
 export default Omark;

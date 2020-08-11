@@ -17,11 +17,15 @@
 
   &__elipse {
     fill: none;
-    stroke: rgba(color('contrast'), 0.8);
+    stroke: color('contrast');
     stroke-dasharray: 380;
     stroke-width: 2px;
     transform-origin: 50% 50%;
     transition: transition([stroke]);
+
+    &.-small {
+      stroke-width: 4px;
+    }
 
     &.-win {
       stroke: color('accent');

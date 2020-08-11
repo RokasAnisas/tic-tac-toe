@@ -1,6 +1,19 @@
 .score-pill {
+  $_content-size: font-size('m');
+
+  align-items: center;
   background-color: color('secondary');
   border-radius: radius('secondary');
   display: flex;
   padding: spacing('s') spacing('m');
+  &__mark-container {
+    height: $_content-size;
+    margin-right: spacing('m') * 2;
+    width: $_content-size;
+  }
+
+  &__score {
+    color: color('secondary-active');
+    font-size: $_content-size;
+  }
 }
