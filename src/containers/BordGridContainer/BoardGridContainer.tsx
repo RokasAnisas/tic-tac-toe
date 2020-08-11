@@ -36,6 +36,18 @@ const BoardGridContainer: FunctionComponent = () => {
     SetActivePlayer(nextPlayer);
   };
 
+  const highlightWinningRow = (winCombo: number[]) => {
+    winCombo.forEach(winIndex => {
+      UpdateGridItem({
+        id: winIndex,
+        content: {
+          player: grid[winIndex]!.player,
+          win: true,
+        },
+      });
+    });
+  };
+
   useEffect(() => {
     const winner = checkWinner(grid);
     const tie = checkTie(grid);
@@ -56,6 +68,11 @@ const BoardGridContainer: FunctionComponent = () => {
       });
     }
   }, [grid]);
+
+  useEffect(() => {
+    const winner = checkWinner(grid);
+    winner && highlightWinningRow(winner.combination);
+  }, [gridLock]);
 
   return (
     <BoardGrid blocks={grid} onItemClick={onItemClick} locked={gridLock} />

@@ -24,7 +24,12 @@
     background-color: color('contrast');
     height: 100%;
     transform-origin: 0% 0%;
+    transition: transition([background-color]);
     width: 1px;
+
+    &.-win {
+      background-color: color('accent');
+    }
   }
 
   @keyframes enterLine {

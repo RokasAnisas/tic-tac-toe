@@ -10,12 +10,13 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   type,
   onClick,
   disabled,
+  win
 }: GridBlockProps) => {
   const className = 'grid-block';
 
   const renderMark = () => {
     if (type === Player.x) {
-      return <Xmark />;
+      return <Xmark win={win} />;
     }
 
     if (type === Player.o) {
@@ -36,6 +37,7 @@ export interface GridBlockProps {
   type?: Player;
   onClick?: () => void;
   disabled?: boolean;
+  win?: boolean;
 }
 
 export default GridBlock;
