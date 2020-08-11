@@ -16,6 +16,10 @@ const initialState: ApplicationState = {
     active: false,
   },
   gridLock: false,
+  score: {
+    x: 0,
+    o: 0,
+  }
 };
 
 export default initialState;
