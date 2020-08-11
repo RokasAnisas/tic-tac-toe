@@ -1,5 +1,6 @@
 $radius-map: (
   'primary': 10px,
+  'secondary': 20px,
 );
 
 @function radius($_key) {
