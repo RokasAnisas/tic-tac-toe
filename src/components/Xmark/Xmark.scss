@@ -28,7 +28,10 @@
 
     &.-win {
       background-color: color('accent');
-      width: 1px;
+    }
+
+    &.-invert {
+      background-color: color('key');
     }
 
     &.-animated {

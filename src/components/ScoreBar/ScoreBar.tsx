@@ -13,7 +13,7 @@ const ScoreBar: FunctionComponent<ScoreBarProps> = ({
   return (
     <div className={className}>
       <div className={`${className}__pill-container`}>
-        <ScorePill player={Player.x} />
+        <ScorePill player={Player.x} active />
       </div>
       <div className={`${className}__pill-container`}>
         <ScorePill player={Player.o} />

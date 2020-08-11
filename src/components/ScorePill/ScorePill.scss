@@ -6,6 +6,8 @@
   border-radius: radius('secondary');
   display: flex;
   padding: spacing('s') spacing('m');
+  transition: transition([background-color]);
+
   &__mark-container {
     height: $_content-size;
     margin-right: spacing('m') * 2;
@@ -15,5 +17,14 @@
   &__score {
     color: color('secondary-active');
     font-size: $_content-size;
+    transition: transition([color]);
+
+    &.is-active {
+      color: color('key');
+    }
+  }
+
+  &.is-active {
+    background-color: color('secondary-active');
   }
 }
