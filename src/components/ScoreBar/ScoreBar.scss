@@ -1,3 +1,7 @@
 .score-bar {
   display: flex;
+
+  &__pill-container {
+    margin: 0 spacing('m');
+  }
 }

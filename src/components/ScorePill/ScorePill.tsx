@@ -7,7 +7,7 @@ const ScorePill: FunctionComponent<ScorePillProps> = ({ children }: ScorePillPro
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>ScorePill</h1>
+      <h3 className={`${className}__title`}>ScorePill</h3>
       <div className={`${className}__body`}>{children}</div>
     </div>
   );
