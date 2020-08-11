@@ -20,7 +20,13 @@
     fill: none;
     stroke: rgba(color('contrast'), 0.8);
     stroke-dasharray: 380;
+    stroke-width: 2px;
     transform-origin: 50% 50%;
+    transition: transition([stroke]);
+
+    &.-win {
+      stroke: color('accent');
+    }
   }
 
   @keyframes elipseEnter {

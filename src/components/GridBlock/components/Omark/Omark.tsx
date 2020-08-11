@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
+import classNames from 'classnames';
 
 import './Omark.scss';
 
-const Omark: FunctionComponent = () => {
+const Omark: FunctionComponent<OmarkProps> = ({ win }: OmarkProps) => {
   const className = 'o-mark';
 
   return (
@@ -16,16 +17,21 @@ const Omark: FunctionComponent = () => {
       >
         <g>
           <circle
-            className={`${className}__elipse`}
+            className={classNames(`${className}__elipse`, {
+              '-win': win
+            })}
             cx="50"
             cy="50"
             r="50"
-            strokeWidth={2}
           />
         </g>
       </svg>
     </div>
   );
 };
+
+interface OmarkProps {
+  win?: boolean;
+}
 
 export default Omark;

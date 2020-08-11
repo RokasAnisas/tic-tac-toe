@@ -20,7 +20,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
     }
 
     if (type === Player.o) {
-      return <Omark />;
+      return <Omark win={win} />;
     }
 
     return <></>;
