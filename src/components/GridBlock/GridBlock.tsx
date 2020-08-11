@@ -10,17 +10,17 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   type,
   onClick,
   disabled,
-  win
+  win,
 }: GridBlockProps) => {
   const className = 'grid-block';
 
   const renderMark = () => {
     if (type === Player.x) {
-      return <Xmark win={win} />;
+      return <Xmark win={win} animated />;
     }
 
     if (type === Player.o) {
-      return <Omark win={win} />;
+      return <Omark win={win} animated />;
     }
 
     return <></>;
