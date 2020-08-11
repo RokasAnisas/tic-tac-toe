@@ -1,5 +1,5 @@
-import { ApplicationState } from './types';
-import { Actions, ActionTypes } from './types';
+import { ApplicationState, Actions, ActionTypes } from './types';
+import { Player } from '@/constants';
 import initialState from './initialState';
 
 const reducer = (state = initialState, action: Actions): ApplicationState => {
@@ -51,6 +51,15 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
       return {
         ...state,
         gridLock: action.payload,
+      };
+    }
+    case ActionTypes.bumpScore: {
+      return {
+        ...state,
+        score: {
+          x: action.payload === Player.x ? state.score.x += 1 : state.score.x,
+          o: action.payload === Player.o ? state.score.o += 1 : state.score.o,
+        },
       };
     }
     default: {

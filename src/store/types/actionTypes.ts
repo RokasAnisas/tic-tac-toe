@@ -37,6 +37,11 @@ export interface SetGridLock {
   payload: boolean;
 }
 
+export interface BumpScore {
+  type: ActionTypes.bumpScore;
+  payload: Player;
+}
+
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
   updateGridItem = 'UpdateGridItem',
@@ -45,6 +50,7 @@ export enum ActionTypes {
   showConfirmDialog = 'ShowConfirmDialog',
   hideConfirmDialog = 'HideConfirmDialog',
   setGridLock = 'SetGridLock',
+  bumpScore = 'BumpScore',
 }
 
 export type Actions =
@@ -54,4 +60,5 @@ export type Actions =
   | ResetGrid
   | ShowConfirmDialog
   | HideConfirmDialog
+  | BumpScore
   | SetGridLock;

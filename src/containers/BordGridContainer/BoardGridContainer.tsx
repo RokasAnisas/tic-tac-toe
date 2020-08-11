@@ -8,6 +8,7 @@ import {
   ResetGrid,
   ShowConfirmDialog,
   SetGridLock,
+  BumpScore
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
@@ -71,7 +72,11 @@ const BoardGridContainer: FunctionComponent = () => {
 
   useEffect(() => {
     const winner = checkWinner(grid);
-    winner && highlightWinningRow(winner.combination);
+
+    if (winner) {
+      BumpScore(winner.player!);
+      highlightWinningRow(winner.combination);
+    }
   }, [gridLock]);
 
   return (
