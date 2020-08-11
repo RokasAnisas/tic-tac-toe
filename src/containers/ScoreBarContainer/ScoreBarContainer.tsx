@@ -1,16 +1,24 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent } from 'react';
+import { connect } from 'react-redux';
 
 import { Player } from '@/constants';
+import { ApplicationState } from '@/store/types';
 import ScoreBar from '@/components/ScoreBar';
 
 const ScoreBarContainer: FunctionComponent<ScoreBarContainerProps> = ({
-  children,
+  activePlayer,
 }: ScoreBarContainerProps) => {
-  return <ScoreBar activePlayer={Player.x} />;
+  return <ScoreBar activePlayer={activePlayer} />;
 };
 
 interface ScoreBarContainerProps {
-  children?: ReactNode;
+  activePlayer: Player;
 }
 
-export default ScoreBarContainer;
+const mapStateToProps = (state: ApplicationState): ScoreBarContainerProps => {
+  return {
+    activePlayer: state.activePlayer,
+  };
+};
+
+export default connect(mapStateToProps)(ScoreBarContainer);
