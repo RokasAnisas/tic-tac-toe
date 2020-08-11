@@ -29,7 +29,7 @@ export const checkWinner = (grid: GridBlockType[]): WinnerType => {
       if (win) {
         winner = {
           player: control!.player,
-          combination: combo
+          combination: combo,
         };
       }
     }
@@ -40,7 +40,7 @@ export const checkWinner = (grid: GridBlockType[]): WinnerType => {
 
 interface WinnerObjectType {
   player?: Player;
-  combination: number[]
+  combination: number[];
 }
 
 type WinnerType = WinnerObjectType | null;

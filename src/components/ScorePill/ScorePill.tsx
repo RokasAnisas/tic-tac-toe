@@ -2,8 +2,10 @@ import React, { FunctionComponent, ReactNode } from 'react';
 
 import './ScorePill.scss';
 
-const ScorePill: FunctionComponent<ScorePillProps> = ({ children }: ScorePillProps) => {
-  const className = "score-pill";
+const ScorePill: FunctionComponent<ScorePillProps> = ({
+  children,
+}: ScorePillProps) => {
+  const className = 'score-pill';
 
   return (
     <div className={className}>

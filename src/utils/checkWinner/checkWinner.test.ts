@@ -39,7 +39,7 @@ describe('checkWinner', () => {
   it('should return the winner on correct grid', () => {
     const testResult = {
       combination: [0, 1, 2],
-      player: Player.o
+      player: Player.o,
     };
 
     expect(checkWinner(winnerO)).toStrictEqual(testResult);

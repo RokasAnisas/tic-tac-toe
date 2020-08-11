@@ -4,8 +4,10 @@ import ScorePill from '@/components/ScorePill';
 
 import './ScoreBar.scss';
 
-const ScoreBar: FunctionComponent<ScoreBarProps> = ({ children }: ScoreBarProps) => {
-  const className = "score-bar";
+const ScoreBar: FunctionComponent<ScoreBarProps> = ({
+  children,
+}: ScoreBarProps) => {
+  const className = 'score-bar';
 
   return (
     <div className={className}>
