@@ -37,6 +37,11 @@ describe('checkWinner', () => {
   });
 
   it('should return the winner on correct grid', () => {
-    expect(checkWinner(winnerO)).toBe(Player.o);
+    const testResult = {
+      combination: [0, 1, 2],
+      player: Player.o
+    };
+
+    expect(checkWinner(winnerO)).toStrictEqual(testResult);
   });
 });
