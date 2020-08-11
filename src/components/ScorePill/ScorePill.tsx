@@ -10,6 +10,7 @@ import './ScorePill.scss';
 const ScorePill: FunctionComponent<ScorePillProps> = ({
   player,
   active,
+  score,
 }: ScorePillProps) => {
   const className = 'score-pill';
 
@@ -28,7 +29,7 @@ const ScorePill: FunctionComponent<ScorePillProps> = ({
           'is-active': active,
         })}
       >
-        0
+        {score}
       </span>
     </div>
   );
@@ -37,6 +38,7 @@ const ScorePill: FunctionComponent<ScorePillProps> = ({
 interface ScorePillProps {
   player: Player;
   active?: boolean;
+  score: number;
 }
 
 export default ScorePill;

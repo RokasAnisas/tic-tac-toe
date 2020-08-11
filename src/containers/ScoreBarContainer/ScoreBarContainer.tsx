@@ -8,7 +8,7 @@ import ScoreBar from '@/components/ScoreBar';
 const ScoreBarContainer: FunctionComponent<ScoreBarContainerProps> = ({
   activePlayer,
 }: ScoreBarContainerProps) => {
-  return <ScoreBar activePlayer={activePlayer} />;
+  return <ScoreBar activePlayer={activePlayer} x={2} o={4} />;
 };
 
 interface ScoreBarContainerProps {
