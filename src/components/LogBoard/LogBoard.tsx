@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
+import LogPill from '@/components/LogPill';
+
 import './LogBoard.scss';
 
 const LogBoard: FunctionComponent = () => {
@@ -9,7 +11,7 @@ const LogBoard: FunctionComponent = () => {
     <div className={className}>
       <div className={`${className}__background`}></div>
       <div className={`${className}__body`}>
-        <h1 className={`${className}__title`}>LogBoard</h1>
+        <LogPill />
       </div>
     </div>
   );

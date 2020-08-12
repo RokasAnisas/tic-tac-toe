@@ -2,9 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  // height: 100vh;
   position: relative;
-  // width: 100vw;
   z-index: z-index('base');
 
   &__background {
@@ -25,7 +23,7 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
-    padding: spacing('l') 0;
+    padding: spacing('l') spacing('l');
     width: size('max-width');
   }
 }
