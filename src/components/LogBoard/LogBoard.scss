@@ -1,3 +1,31 @@
 .log-board {
+  align-items: center;
   display: flex;
+  flex-direction: column;
+  // height: 100vh;
+  position: relative;
+  // width: 100vw;
+  z-index: z-index('base');
+
+  &__background {
+    backdrop-filter: blur(10px);
+    background-color: color('key');
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: z-index('background');
+  }
+
+  &__body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: spacing('l') 0;
+    width: size('max-width');
+  }
 }

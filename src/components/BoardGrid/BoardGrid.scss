@@ -1,5 +1,5 @@
 .board-grid {
-  $_grid-size: 60vmin;
+  $_grid-size: size('max-width');
   $_grid-item-size: calc(100% / 3);
 
   height: $_grid-size;

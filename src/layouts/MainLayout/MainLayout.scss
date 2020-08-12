@@ -23,5 +23,6 @@
   &__log-board {
     bottom: 0;
     position: fixed;
+    z-index: z-index('overlay');
   }
 }

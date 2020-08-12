@@ -1,20 +1,18 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import './LogBoard.scss';
 
-const LogBoard: FunctionComponent<LogBoardProps> = ({ children }: LogBoardProps) => {
+const LogBoard: FunctionComponent = () => {
   const className = "log-board";
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>LogBoard</h1>
-      <div className={`${className}__body`}>{children}</div>
+      <div className={`${className}__background`}></div>
+      <div className={`${className}__body`}>
+        <h1 className={`${className}__title`}>LogBoard</h1>
+      </div>
     </div>
   );
 };
-
-interface LogBoardProps {
-  children?: ReactNode;
-}
 
 export default LogBoard;
