@@ -1,7 +1,9 @@
 .log-pill {
+  align-items: center;
   background-color: color('secondary');
   border-radius: radius('primary');
   display: flex;
-  padding: spacing('s');
+  height: size('pill');
+  padding: spacing('s') spacing('m');
   width: 100%;
 }

@@ -11,7 +11,7 @@ const LogBoard: FunctionComponent = () => {
     <div className={className}>
       <div className={`${className}__background`}></div>
       <div className={`${className}__body`}>
-        <LogPill />
+        <LogPill message="made a move" />
       </div>
     </div>
   );
