@@ -2,9 +2,13 @@
   align-items: center;
   background-color: color('secondary');
   border-radius: radius('primary');
-  color: color('contrast');
   display: flex;
   height: size('pill');
   padding: spacing('s') spacing('m');
   width: 100%;
+
+  &__message {
+    color: color('contrast');
+    font-size: font-size('s');
+  }
 }

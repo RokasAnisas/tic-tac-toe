@@ -9,7 +9,7 @@ const LogPill: FunctionComponent<LogPillProps> = ({
 
   return (
     <div className={className}>
-      <div className={`${className}__body`}>{message}</div>
+      <span className={`${className}__message`}>{message}</span>
     </div>
   );
 };
