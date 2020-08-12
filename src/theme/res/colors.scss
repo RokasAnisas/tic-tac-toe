@@ -1,4 +1,4 @@
-$color-contrast: #0a0a0a;
+$color-contrast: #707070;
 $color-key: #fff;
 $color-accent: #12cec7;
 
@@ -7,7 +7,6 @@ $theme-colors: (
   'contrast': $color-contrast,
   'key': $color-key,
   'secondary': darken($color-key, 5%),
-  'secondary-active': darken($color-key, 40%),
 );
 
 @function color($_key) {

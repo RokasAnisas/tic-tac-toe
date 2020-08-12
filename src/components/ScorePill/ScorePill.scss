@@ -15,7 +15,7 @@
   }
 
   &__score {
-    color: color('secondary-active');
+    color: color('contrast');
     font-size: $_content-size;
     transition: transition([color]);
 

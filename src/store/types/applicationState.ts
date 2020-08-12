@@ -1,5 +1,6 @@
 import { GridBlockType, ConfirmDialogType, Score } from './';
 import { Player } from '@/constants';
+import { LogItem } from './logItem';
 
 export interface ApplicationState {
   activePlayer: Player;
@@ -7,4 +8,5 @@ export interface ApplicationState {
   confirmDialog: ConfirmDialogType;
   gridLock: boolean;
   score: Score;
+  actionLog?: Array<LogItem>;
 }
