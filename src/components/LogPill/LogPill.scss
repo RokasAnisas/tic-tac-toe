@@ -3,9 +3,15 @@
   background-color: color('secondary');
   border-radius: radius('primary');
   display: flex;
-  height: size('pill');
-  padding: spacing('s') spacing('m');
+  min-height: size('pill');
+  padding: 0 spacing('m');
   width: 100%;
+
+  &__player-mark {
+    height: font-size('m');
+    margin-right: spacing('s');
+    width: font-size('m');
+  }
 
   &__message {
     color: color('contrast');
