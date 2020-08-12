@@ -17,6 +17,7 @@
   &__score {
     color: color('contrast');
     font-size: $_content-size;
+    font-weight: 300;
     transition: transition([color]);
 
     &.is-active {
