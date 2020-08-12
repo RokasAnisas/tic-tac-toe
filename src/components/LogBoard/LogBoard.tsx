@@ -5,7 +5,7 @@ import LogPill from '@/components/LogPill';
 import './LogBoard.scss';
 
 const LogBoard: FunctionComponent = () => {
-  const className = "log-board";
+  const className = 'log-board';
 
   return (
     <div className={className}>

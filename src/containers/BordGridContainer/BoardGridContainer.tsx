@@ -8,7 +8,7 @@ import {
   ResetGrid,
   ShowConfirmDialog,
   SetGridLock,
-  BumpScore
+  BumpScore,
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';

@@ -1,4 +1,4 @@
-import { Player } from "@/constants";
+import { Player } from '@/constants';
 
 export interface LogItem {
   player?: Player;
