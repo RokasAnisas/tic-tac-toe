@@ -7,6 +7,7 @@ const Omark: FunctionComponent<OmarkProps> = ({
   win,
   animated,
   small,
+  xsmall,
   invert,
 }: OmarkProps) => {
   const className = 'o-mark';
@@ -26,6 +27,7 @@ const Omark: FunctionComponent<OmarkProps> = ({
               '-win': win,
               '-animated': animated,
               '-small': small,
+              '-x-small': xsmall,
               '-invert': invert,
             })}
             cx="50"
@@ -42,6 +44,7 @@ interface OmarkProps {
   win?: boolean;
   animated?: boolean;
   small?: boolean;
+  xsmall?: boolean;
   invert?: boolean;
 }
 

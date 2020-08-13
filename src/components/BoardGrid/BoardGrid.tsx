@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import classNames from 'classnames';
 
 import { GridBlockType } from '@/store/types';
 
@@ -10,28 +11,41 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
   blocks,
   onItemClick,
   locked,
+  size = 'default',
 }: BoardGridProps) => {
   const className = 'board-grid';
 
-  const renderBlocks = blocks.map((item: GridBlockType, index) => {
-    const onItemClickHandler = () => !locked && onItemClick(index);
+  const renderBlocks = blocks
+    ? blocks.map((item: GridBlockType, index) => {
+        const onItemClickHandler = () =>
+          !locked && onItemClick && onItemClick(index);
 
-    if (!item) {
-      return (
-        <div key={index} className={`${className}__block`}>
-          <GridBlock onClick={onItemClickHandler} disabled={locked} />
-        </div>
-      );
-    }
-    return (
-      <div key={index} className={`${className}__block`}>
-        <GridBlock type={item.player} disabled={locked} win={item.win} />
-      </div>
-    );
-  });
+        if (!item) {
+          return (
+            <div key={index} className={`${className}__block`}>
+              <GridBlock onClick={onItemClickHandler} disabled={locked} />
+            </div>
+          );
+        }
+        return (
+          <div key={index} className={`${className}__block`}>
+            <GridBlock
+              type={item.player}
+              disabled={locked}
+              win={item.win}
+              small={size === 'pill'}
+            />
+          </div>
+        );
+      })
+    : null;
 
   return (
-    <div className={className}>
+    <div
+      className={classNames(className, {
+        '-size-pill': size === 'pill',
+      })}
+    >
       <div className={`${className}__lines`}>
         <div className={`${className}__lines-horizontal`}>
           <div className={`${className}__line -horizontal`} />
@@ -48,9 +62,10 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
 };
 
 interface BoardGridProps {
-  blocks: GridBlockType[];
-  onItemClick: (id: number) => void;
+  blocks?: GridBlockType[];
+  onItemClick?: (id: number) => void;
   locked?: boolean;
+  size?: 'default' | 'pill';
 }
 
 export default BoardGrid;

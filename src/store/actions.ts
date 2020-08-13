@@ -1,6 +1,11 @@
 import store from './store';
 import { Player } from '@/constants';
-import { ActionTypes, GridBlockType, ConfirmDialogPayload } from './types';
+import {
+  ActionTypes,
+  GridBlockType,
+  ConfirmDialogPayload,
+  LogItem,
+} from './types';
 
 export const SetActivePlayer = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.setActivePlayer, payload: payload });
@@ -35,4 +40,8 @@ export const SetGridLock = (payload: boolean): void => {
 
 export const BumpScore = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.bumpScore, payload: payload });
+};
+
+export const AddLog = (payload: LogItem): void => {
+  store.dispatch({ type: ActionTypes.addLog, payload: payload });
 };

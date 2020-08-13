@@ -8,9 +8,10 @@ import {
   ResetGrid,
   ShowConfirmDialog,
   SetGridLock,
-  BumpScore
+  BumpScore,
+  AddLog,
 } from '@/store/actions';
-import { ApplicationState } from '@/store/types';
+import { ApplicationState, GridBlockType } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
 import { Player, Messages } from '@/constants';
 
@@ -20,13 +21,30 @@ const BoardGridContainer: FunctionComponent = () => {
   );
   const grid = useSelector((state: ApplicationState) => state.grid);
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
+  const score = useSelector((state: ApplicationState) => state.score);
 
   const onItemClick = (id: number) => {
+    const gridClone = grid.map((item: GridBlockType, index) => {
+      if (id === index) {
+        const winItem: GridBlockType = {
+          player: activePlayer,
+          win: true,
+        };
+        return winItem;
+      }
+      return item;
+    });
     UpdateGridItem({
       id: id,
       content: {
         player: activePlayer,
       },
+    });
+
+    AddLog({
+      message: Messages.moved,
+      player: activePlayer,
+      gridSnapshot: gridClone,
     });
 
     toggleActivePlayer();
@@ -60,6 +78,10 @@ const BoardGridContainer: FunctionComponent = () => {
       const onDialogConfirm = () => {
         ResetGrid();
         SetGridLock(false);
+        AddLog({
+          message: Messages.newGame,
+          accent: true,
+        });
       };
 
       SetGridLock(true);
@@ -72,10 +94,23 @@ const BoardGridContainer: FunctionComponent = () => {
 
   useEffect(() => {
     const winner = checkWinner(grid);
+    const tie = checkTie(grid);
 
     if (winner) {
       BumpScore(winner.player!);
       highlightWinningRow(winner.combination);
+      AddLog({
+        message: `${Messages.win} ${score.x}:${score.o}`,
+        player: winner.player!,
+        accent: true,
+      });
+    }
+
+    if (tie) {
+      AddLog({
+        message: Messages.tie,
+        accent: true,
+      });
     }
   }, [gridLock]);
 

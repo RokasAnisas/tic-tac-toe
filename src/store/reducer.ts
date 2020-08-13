@@ -57,9 +57,15 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
       return {
         ...state,
         score: {
-          x: action.payload === Player.x ? state.score.x += 1 : state.score.x,
-          o: action.payload === Player.o ? state.score.o += 1 : state.score.o,
+          x: action.payload === Player.x ? (state.score.x += 1) : state.score.x,
+          o: action.payload === Player.o ? (state.score.o += 1) : state.score.o,
         },
+      };
+    }
+    case ActionTypes.addLog: {
+      return {
+        ...state,
+        actionLog: [...state.actionLog, action.payload],
       };
     }
     default: {
