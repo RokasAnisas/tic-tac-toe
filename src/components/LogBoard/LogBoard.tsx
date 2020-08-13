@@ -7,7 +7,7 @@ import './LogBoard.scss';
 
 const LogBoard: FunctionComponent = () => {
   const className = 'log-board';
-  const pills = [1, 2, 3, 4, 5];
+  const pills = [1];
 
   const renderLogPills = pills.map((item, index) => {
     return (

@@ -20,6 +20,7 @@ const initialState: ApplicationState = {
     x: 0,
     o: 0,
   },
+  actionLog: []
 };
 
 export default initialState;

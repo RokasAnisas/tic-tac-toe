@@ -9,6 +9,7 @@ import {
   ShowConfirmDialog,
   SetGridLock,
   BumpScore,
+  AddLog
 } from '@/store/actions';
 import { ApplicationState } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
@@ -27,6 +28,11 @@ const BoardGridContainer: FunctionComponent = () => {
       content: {
         player: activePlayer,
       },
+    });
+
+    AddLog({
+      message: 'made a move',
+      player: activePlayer
     });
 
     toggleActivePlayer();

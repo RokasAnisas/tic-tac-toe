@@ -1,4 +1,4 @@
-import { ApplicationState, Actions, ActionTypes } from './types';
+import { ApplicationState, Actions, ActionTypes, LogItem } from './types';
 import { Player } from '@/constants';
 import initialState from './initialState';
 
@@ -60,6 +60,20 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
           x: action.payload === Player.x ? (state.score.x += 1) : state.score.x,
           o: action.payload === Player.o ? (state.score.o += 1) : state.score.o,
         },
+      };
+    }
+    case ActionTypes.addLog: {
+      const modifiedLog: LogItem[] = state.actionLog!;
+
+      modifiedLog.push({
+        message: action.payload.message,
+        player: action.payload.player,
+        gridSnapshot: action.payload.gridSnapshot,
+      });
+
+      return {
+        ...state,
+        actionLog: modifiedLog,
       };
     }
     default: {
