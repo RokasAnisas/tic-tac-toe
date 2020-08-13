@@ -4,17 +4,12 @@ import { GridBlockType, LogItem } from '@/store/types';
 import { SetGrid, SetLog, SetActivePlayer } from '@/store/actions';
 
 export const restoreSession = (): void => {
-  const grid = storageUtil.getItem(Storage.grid);
-  const gridParsed: GridBlockType[] = JSON.parse(grid!);
-
-  const actionLog = storageUtil.getItem(Storage.actionLog);
-  const actionLogParsed: LogItem[] = JSON.parse(actionLog!);
-
-  const activePlayer = storageUtil.getItem(Storage.activePlayer);
-  const activePlayerParsed: Player = JSON.parse(activePlayer!);
+  const grid: GridBlockType[] = JSON.parse(storageUtil.getItem(Storage.grid)!);
+  const actionLog: LogItem[] = JSON.parse(storageUtil.getItem(Storage.actionLog)!);
+  const activePlayer: Player = JSON.parse(storageUtil.getItem(Storage.activePlayer)!);
 
 
-  SetGrid(gridParsed);
-  SetLog(actionLogParsed);
-  SetActivePlayer(activePlayerParsed);
+  SetGrid(grid);
+  SetLog(actionLog);
+  SetActivePlayer(activePlayer);
 };
