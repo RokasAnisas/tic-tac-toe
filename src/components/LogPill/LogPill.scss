@@ -2,6 +2,7 @@
   $_parent: &;
 
   align-items: center;
+  animation: pillEnter duration('fast') ease forwards;
   background-color: color('secondary');
   border-radius: radius('primary');
   display: flex;
@@ -32,6 +33,15 @@
 
     #{$_parent}__message {
       color: color('key');
+    }
+  }
+
+  @keyframes pillEnter {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 }
