@@ -81,5 +81,18 @@
   &__pill {
     margin-top: spacing('s');
     width: size('max-width');
+
+    &:not(:first-child) {
+      animation: pillMove duration('fast') ease forwards;
+    }
+  }
+
+  @keyframes pillMove {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
