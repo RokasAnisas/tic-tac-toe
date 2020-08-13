@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, createRef } from 'react';
 
 import { LogItem } from '@/store/types';
 import LogPill from '@/components/LogPill';
@@ -9,6 +9,11 @@ const LogBoard: FunctionComponent<LogBoardProps> = ({
   actionLog,
 }: LogBoardProps) => {
   const className = 'log-board';
+  const bodyRef = createRef<HTMLDivElement>();
+
+  const scrollToTop = () => {
+    bodyRef.current?.scrollTo(0, 0);
+  };
 
   const renderLogPills = actionLog.map((item, index) => {
     return (
@@ -24,9 +29,11 @@ const LogBoard: FunctionComponent<LogBoardProps> = ({
   });
 
   return (
-    <div className={className}>
+    <div className={className} onMouseLeave={scrollToTop}>
       <div className={`${className}__background`}></div>
-      <div className={`${className}__body`}>{renderLogPills.reverse()}</div>
+      <div className={`${className}__body`} ref={bodyRef}>
+        {renderLogPills.reverse()}
+      </div>
     </div>
   );
 };

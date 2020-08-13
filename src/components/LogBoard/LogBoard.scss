@@ -49,6 +49,7 @@
     justify-content: flex-start;
     overflow-y: hidden;
     padding: 0 spacing('l') spacing('l');
+    scroll-behavior: smooth;
     transition: transition([padding]);
     width: 100%;
   }
