@@ -33,6 +33,12 @@ export const saveProgress = (): void => {
         const actionLogAsString = JSON.stringify(currentState.actionLog);
         storageUtil.setItem(Storage.actionLog, actionLogAsString);
       }
+
+      // Save active player
+      if (previousState?.activePlayer !== currentState.activePlayer) {
+        const activePlayerAsString = JSON.stringify(currentState.activePlayer);
+        storageUtil.setItem(Storage.activePlayer, activePlayerAsString);
+      }
     }
 
   };
