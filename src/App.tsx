@@ -1,6 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 
-import { saveProgress } from '@/services';
+import { saveProgress, checkPreviousSession } from '@/services';
+import { ShowConfirmDialog } from '@/store/actions';
+import { Messages } from '@/constants';
 
 import MainLayout from '@/layouts/MainLayout';
 import BoardGridContainer from '@/containers/BordGridContainer';
@@ -10,6 +12,16 @@ import LogBoardContainer from '@/containers/LogBoardContainer';
 
 const App: FunctionComponent = () => {
   saveProgress();
+
+  useEffect(() => {
+    checkPreviousSession().then(value => {
+      if (value) {
+        ShowConfirmDialog({
+          message: Messages.previousSession
+        });
+      }
+    });
+  });
 
   return (
     <MainLayout

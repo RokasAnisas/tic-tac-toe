@@ -3,4 +3,5 @@ export enum Messages {
   tie = 'Tie!',
   moved = 'Made a move',
   newGame = 'New game',
+  previousSession = 'Previous session has been found'
 }
