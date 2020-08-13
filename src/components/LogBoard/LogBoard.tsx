@@ -13,7 +13,11 @@ const LogBoard: FunctionComponent<LogBoardProps> = ({
   const renderLogPills = actionLog.reverse().map((item, index) => {
     return (
       <div key={index} className={`${className}__pill`}>
-        <LogPill message={item.message} player={item.player} />
+        <LogPill
+          message={item.message}
+          player={item.player}
+          accent={item.accent}
+        />
       </div>
     );
   });

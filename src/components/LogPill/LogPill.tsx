@@ -1,20 +1,28 @@
 import React, { FunctionComponent } from 'react';
+import classNames from 'classnames';
 
 import { Player } from '@/constants';
 import Xmark from '@/components/Xmark';
 import Omark from '@/components/Omark';
 import BoardGrid from '@/components/BoardGrid';
+import { GridBlockType } from '@/store/types';
 
 import './LogPill.scss';
 
 const LogPill: FunctionComponent<LogPillProps> = ({
   message,
   player,
+  accent,
+  gridSnapshot,
 }: LogPillProps) => {
   const className = 'log-pill';
 
   return (
-    <div className={className}>
+    <div
+      className={classNames(className, {
+        '-accent': accent,
+      })}
+    >
       <div className={`${className}__message-container`}>
         {player && (
           <div className={`${className}__player-mark`}>
@@ -25,7 +33,7 @@ const LogPill: FunctionComponent<LogPillProps> = ({
         <span className={`${className}__message`}>{message}</span>
       </div>
       <div className={`${className}__board-container`}>
-        <BoardGrid locked size="pill" />
+        {gridSnapshot && <BoardGrid blocks={gridSnapshot} locked size="pill" />}
       </div>
     </div>
   );
@@ -34,6 +42,8 @@ const LogPill: FunctionComponent<LogPillProps> = ({
 interface LogPillProps {
   message?: string;
   player?: Player;
+  accent?: boolean;
+  gridSnapshot?: GridBlockType[];
 }
 
 export default LogPill;

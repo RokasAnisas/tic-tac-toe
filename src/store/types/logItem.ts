@@ -4,5 +4,6 @@ import { GridBlockType } from './';
 export interface LogItem {
   player?: Player;
   message: string;
-  gridSnapshot?: GridBlockType[]
+  gridSnapshot?: GridBlockType[];
+  accent?: boolean;
 }

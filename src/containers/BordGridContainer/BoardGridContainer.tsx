@@ -23,6 +23,7 @@ const BoardGridContainer: FunctionComponent = () => {
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
 
   const onItemClick = (id: number) => {
+    const gridClone = grid.map(item => item);
     UpdateGridItem({
       id: id,
       content: {
@@ -32,7 +33,8 @@ const BoardGridContainer: FunctionComponent = () => {
 
     AddLog({
       message: 'made a move',
-      player: activePlayer
+      player: activePlayer,
+      gridSnapshot: gridClone,
     });
 
     toggleActivePlayer();

@@ -24,4 +24,8 @@
     color: color('contrast');
     font-size: font-size('s');
   }
+
+  &__accent {
+    background-color: color('accent');
+  }
 }
