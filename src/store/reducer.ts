@@ -63,6 +63,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         },
       };
     }
+    case ActionTypes.setScore: {
+      return {
+        ...state,
+        score: action.payload,
+      };
+    }
     case ActionTypes.addLog: {
       return {
         ...state,

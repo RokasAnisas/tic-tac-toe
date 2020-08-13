@@ -5,6 +5,7 @@ import {
   GridBlockType,
   ConfirmDialogPayload,
   LogItem,
+  Score,
 } from './types';
 
 export const SetActivePlayer = (payload: Player): void => {
@@ -40,6 +41,10 @@ export const SetGridLock = (payload: boolean): void => {
 
 export const BumpScore = (payload: Player): void => {
   store.dispatch({ type: ActionTypes.bumpScore, payload: payload });
+};
+
+export const SetScore = (payload: Score): void => {
+  store.dispatch({ type: ActionTypes.setScore, payload: payload });
 };
 
 export const AddLog = (payload: LogItem): void => {
