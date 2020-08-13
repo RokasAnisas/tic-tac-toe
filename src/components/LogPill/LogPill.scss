@@ -1,4 +1,6 @@
 .log-pill {
+  $_parent: &;
+
   align-items: center;
   background-color: color('secondary');
   border-radius: radius('primary');
@@ -25,7 +27,11 @@
     font-size: font-size('s');
   }
 
-  &__accent {
+  &.-accent {
     background-color: color('accent');
+
+    #{$_parent}__message {
+      color: color('key');
+    }
   }
 }

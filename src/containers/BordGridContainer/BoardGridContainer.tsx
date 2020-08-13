@@ -41,7 +41,7 @@ const BoardGridContainer: FunctionComponent = () => {
     });
 
     AddLog({
-      message: 'made a move',
+      message: Messages.moved,
       player: activePlayer,
       gridSnapshot: gridClone,
     });
@@ -77,6 +77,10 @@ const BoardGridContainer: FunctionComponent = () => {
       const onDialogConfirm = () => {
         ResetGrid();
         SetGridLock(false);
+        AddLog({
+          message: Messages.newGame,
+          accent: true,
+        });
       };
 
       SetGridLock(true);
@@ -89,10 +93,23 @@ const BoardGridContainer: FunctionComponent = () => {
 
   useEffect(() => {
     const winner = checkWinner(grid);
+    const tie = checkTie(grid);
 
     if (winner) {
       BumpScore(winner.player!);
       highlightWinningRow(winner.combination);
+      AddLog({
+        message: Messages.win,
+        player: winner.player!,
+        accent: true,
+      });
+    }
+
+    if (tie) {
+      AddLog({
+        message: Messages.tie,
+        accent: true,
+      });
     }
   }, [gridLock]);
 
