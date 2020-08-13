@@ -1,5 +1,7 @@
-## React Template by [@RokasAniss](https://github.com/RokasAniss)
+## Tic Tac Tie made by [@RokasAniss](https://github.com/RokasAniss)
 
-### Structure `(src/)`
-
-- `src/components` UI components only, no direct connection to store or api calls in here
+## Develop
+0. Clone the repo
+1. `npm run install`
+2. `npm run start`
+3. Happy coding!

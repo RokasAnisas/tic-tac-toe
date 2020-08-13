@@ -21,6 +21,7 @@ const BoardGridContainer: FunctionComponent = () => {
   );
   const grid = useSelector((state: ApplicationState) => state.grid);
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
+  const score = useSelector((state: ApplicationState) => state.score);
 
   const onItemClick = (id: number) => {
     const gridClone = grid.map((item: GridBlockType, index) => {
@@ -99,7 +100,7 @@ const BoardGridContainer: FunctionComponent = () => {
       BumpScore(winner.player!);
       highlightWinningRow(winner.combination);
       AddLog({
-        message: Messages.win,
+        message: `${Messages.win} ${score.x}:${score.o}`,
         player: winner.player!,
         accent: true,
       });
