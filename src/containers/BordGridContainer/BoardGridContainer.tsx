@@ -9,9 +9,9 @@ import {
   ShowConfirmDialog,
   SetGridLock,
   BumpScore,
-  AddLog
+  AddLog,
 } from '@/store/actions';
-import { ApplicationState } from '@/store/types';
+import { ApplicationState, GridBlockType } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
 import { Player, Messages } from '@/constants';
 
@@ -23,7 +23,16 @@ const BoardGridContainer: FunctionComponent = () => {
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
 
   const onItemClick = (id: number) => {
-    const gridClone = grid.map(item => item);
+    const gridClone = grid.map((item: GridBlockType, index) => {
+      if (id === index) {
+        const winItem: GridBlockType = {
+          player: activePlayer,
+          win: true,
+        };
+        return winItem;
+      }
+      return item;
+    });
     UpdateGridItem({
       id: id,
       content: {
