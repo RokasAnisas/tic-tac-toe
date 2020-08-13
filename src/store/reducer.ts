@@ -43,6 +43,7 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
       return {
         ...state,
         confirmDialog: {
+          ...state.confirmDialog,
           active: false,
         },
       };

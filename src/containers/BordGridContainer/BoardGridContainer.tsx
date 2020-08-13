@@ -87,6 +87,7 @@ const BoardGridContainer: FunctionComponent = () => {
       SetGridLock(true);
       ShowConfirmDialog({
         message: message,
+        actionText: Messages.replay,
         action: onDialogConfirm,
       });
     }

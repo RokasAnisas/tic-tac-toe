@@ -17,7 +17,8 @@ const App: FunctionComponent = () => {
     checkPreviousSession().then(value => {
       if (value) {
         ShowConfirmDialog({
-          message: Messages.previousSession
+          message: Messages.previousSession,
+          actionText: Messages.recover
         });
       }
     });

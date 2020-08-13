@@ -8,6 +8,7 @@ import './ConfirmDialog.scss';
 const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
   message,
   active,
+  actionText,
   onConfirm,
 }: ConfirmDialogProps) => {
   const className = 'confirm-dialog';
@@ -19,7 +20,7 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
       })}
     >
       <span className={`${className}__message`}>{message}</span>
-      <Button label="play again" onClick={onConfirm} />
+      <Button label={actionText} onClick={onConfirm} />
     </div>
   );
 };
@@ -27,6 +28,7 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
 interface ConfirmDialogProps {
   message?: string;
   active?: boolean;
+  actionText: string;
   onConfirm?: () => void;
 }
 

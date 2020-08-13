@@ -13,6 +13,7 @@ const initialState: ApplicationState = {
   activePlayer: Player.x,
   grid: initialGrid(),
   confirmDialog: {
+    actionText: '',
     active: false,
   },
   gridLock: false,
