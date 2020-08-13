@@ -29,7 +29,12 @@ const BoardGrid: FunctionComponent<BoardGridProps> = ({
         }
         return (
           <div key={index} className={`${className}__block`}>
-            <GridBlock type={item.player} disabled={locked} win={item.win} />
+            <GridBlock
+              type={item.player}
+              disabled={locked}
+              win={item.win}
+              small={size === 'pill'}
+            />
           </div>
         );
       })

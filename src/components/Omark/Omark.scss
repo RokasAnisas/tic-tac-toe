@@ -27,6 +27,10 @@
       stroke-width: 4px;
     }
 
+    &.-x-small {
+      stroke-width: 20px;
+    }
+
     &.-invert {
       stroke: color('key');
     }

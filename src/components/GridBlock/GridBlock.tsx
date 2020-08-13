@@ -11,6 +11,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   onClick,
   disabled,
   win,
+  small,
 }: GridBlockProps) => {
   const className = 'grid-block';
 
@@ -20,7 +21,7 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
     }
 
     if (type === Player.o) {
-      return <Omark win={win} animated />;
+      return <Omark win={win} animated xsmall={small} />;
     }
 
     return <></>;
@@ -38,6 +39,7 @@ export interface GridBlockProps {
   onClick?: () => void;
   disabled?: boolean;
   win?: boolean;
+  small?: boolean;
 }
 
 export default GridBlock;
