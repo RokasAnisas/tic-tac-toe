@@ -5,5 +5,5 @@ export enum Messages {
   newGame = 'New game',
   previousSession = 'Previous session has been found',
   replay = 'Play again',
-  recover = 'Recover'
+  recover = 'Recover',
 }

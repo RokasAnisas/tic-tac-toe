@@ -28,7 +28,11 @@ const GridBlock: FunctionComponent<GridBlockProps> = ({
   };
 
   return (
-    <button onClick={onClick} className={className} disabled={disabled || !!type}>
+    <button
+      onClick={onClick}
+      className={className}
+      disabled={disabled || !!type}
+    >
       {renderMark()}
     </button>
   );

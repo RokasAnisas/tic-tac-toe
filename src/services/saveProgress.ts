@@ -3,7 +3,6 @@ import { Storage } from '@/constants';
 import { storageUtil } from '@/utils';
 import store from '@/store/store';
 
-
 const select = (state: ApplicationState) => {
   return state;
 };
@@ -40,7 +39,6 @@ export const saveProgress = (): void => {
         storageUtil.setItem(Storage.activePlayer, activePlayerAsString);
       }
     }
-
   };
 
   store.subscribe(listener);
