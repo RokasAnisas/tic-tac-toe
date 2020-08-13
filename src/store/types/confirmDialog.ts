@@ -4,5 +4,6 @@ export interface ConfirmDialogType extends ConfirmDialogPayload {
 
 export interface ConfirmDialogPayload {
   message?: string;
+  actionText: string;
   action?: () => void;
 }

@@ -43,6 +43,7 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
       return {
         ...state,
         confirmDialog: {
+          ...state.confirmDialog,
           active: false,
         },
       };
@@ -62,10 +63,28 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         },
       };
     }
+    case ActionTypes.setScore: {
+      return {
+        ...state,
+        score: action.payload,
+      };
+    }
     case ActionTypes.addLog: {
       return {
         ...state,
         actionLog: [...state.actionLog, action.payload],
+      };
+    }
+    case ActionTypes.setLog: {
+      return {
+        ...state,
+        actionLog: action.payload,
+      };
+    }
+    case ActionTypes.setFreshLoad: {
+      return {
+        ...state,
+        freshLoad: action.payload,
       };
     }
     default: {

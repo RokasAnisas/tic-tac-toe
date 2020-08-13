@@ -10,9 +10,11 @@ const initialGrid = (): GridBlockType[] => {
 };
 
 const initialState: ApplicationState = {
+  freshLoad: true,
   activePlayer: Player.x,
   grid: initialGrid(),
   confirmDialog: {
+    actionText: '',
     active: false,
   },
   gridLock: false,

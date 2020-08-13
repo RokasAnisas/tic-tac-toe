@@ -1,5 +1,5 @@
 import { Player } from '@/constants';
-import { GridBlockType, ConfirmDialogPayload, LogItem } from './';
+import { GridBlockType, ConfirmDialogPayload, LogItem, Score } from './';
 
 export interface SetActivePlayer {
   type: ActionTypes.setActivePlayer;
@@ -42,9 +42,24 @@ export interface BumpScore {
   payload: Player;
 }
 
+export interface SetScore {
+  type: ActionTypes.setScore;
+  payload: Score;
+}
+
 export interface AddLog {
   type: ActionTypes.addLog;
   payload: LogItem;
+}
+
+export interface SetLog {
+  type: ActionTypes.setLog;
+  payload: LogItem[];
+}
+
+export interface SetFreshLoad {
+  type: ActionTypes.setFreshLoad;
+  payload: boolean;
 }
 
 export enum ActionTypes {
@@ -56,7 +71,10 @@ export enum ActionTypes {
   hideConfirmDialog = 'HideConfirmDialog',
   setGridLock = 'SetGridLock',
   bumpScore = 'BumpScore',
+  setScore = 'SetScore',
   addLog = 'AddLog',
+  setLog = 'SetLog',
+  setFreshLoad = 'SetFreshLoad',
 }
 
 export type Actions =
@@ -67,5 +85,8 @@ export type Actions =
   | ShowConfirmDialog
   | HideConfirmDialog
   | BumpScore
+  | SetScore
   | SetGridLock
-  | AddLog;
+  | AddLog
+  | SetLog
+  | SetFreshLoad;
