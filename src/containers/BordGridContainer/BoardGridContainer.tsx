@@ -10,6 +10,7 @@ import {
   SetGridLock,
   BumpScore,
   AddLog,
+  HideConfirmDialog,
 } from '@/store/actions';
 import { ApplicationState, GridBlockType } from '@/store/types';
 import BoardGrid from '@/components/BoardGrid';
@@ -22,6 +23,7 @@ const BoardGridContainer: FunctionComponent = () => {
   const grid = useSelector((state: ApplicationState) => state.grid);
   const gridLock = useSelector((state: ApplicationState) => state.gridLock);
   const score = useSelector((state: ApplicationState) => state.score);
+  const freshLoad = useSelector((state: ApplicationState) => state.freshLoad);
 
   const onItemClick = (id: number) => {
     const gridClone = grid.map((item: GridBlockType, index) => {
@@ -48,6 +50,10 @@ const BoardGridContainer: FunctionComponent = () => {
     });
 
     toggleActivePlayer();
+
+    if (!freshLoad) {
+      HideConfirmDialog();
+    }
   };
 
   const toggleActivePlayer = (): void => {
