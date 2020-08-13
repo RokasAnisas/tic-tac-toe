@@ -1,37 +1,60 @@
 .log-board {
+  $_parent: &;
+
   align-items: center;
   display: flex;
   flex-direction: column;
+  height: size('pill') + spacing('l');
   position: relative;
+  transition: transition([height]);
+  width: 100vw;
   z-index: z-index('base');
+
+  &:hover {
+    height: size('pill') * 4 + spacing('l');
+
+    #{$_parent}__background {
+      opacity: 0.6;
+      visibility: visible;
+    }
+
+    #{$_parent}__body {
+      overflow-y: auto;
+      padding: spacing('l') spacing('l');
+    }
+  }
 
   &__background {
     backdrop-filter: blur(10px);
-    background-color: color('key');
+    background-color: color('contrast');
     height: 100%;
     left: 0;
-    opacity: 0.7;
-    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
     top: 0;
+    transition: transition([opacity visibility]);
+    visibility: hidden;
     width: 100%;
     z-index: z-index('background');
   }
 
   &__body {
     align-items: center;
-    box-sizing: content-box;
+    background-color: color('key');
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    height: size('pill');
+    height: 100%;
     justify-content: flex-start;
-    overflow-y: auto;
+    overflow-y: hidden;
     padding: 0 spacing('l') spacing('l');
-    width: size('max-width');
+    transition: transition([padding]);
+    width: 100%;
   }
 
   &__pill {
     margin-top: spacing('s');
-    width: 100%;
+    width: size('max-width');
   }
 }
