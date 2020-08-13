@@ -7,13 +7,20 @@ import './LogBoard.scss';
 
 const LogBoard: FunctionComponent = () => {
   const className = 'log-board';
+  const pills = [1, 2, 3, 4, 5];
+
+  const renderLogPills = pills.map((item, index) => {
+    return (
+      <div key={index} className={`${className}__pill`}>
+        <LogPill message="made a move" player={Player.x} />
+      </div>
+    );
+  });
 
   return (
     <div className={className}>
       <div className={`${className}__background`}></div>
-      <div className={`${className}__body`}>
-        <LogPill message="made a move" player={Player.x} />
-      </div>
+      <div className={`${className}__body`}>{renderLogPills}</div>
     </div>
   );
 };

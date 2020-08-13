@@ -26,4 +26,9 @@
     padding: spacing('l') spacing('l');
     width: size('max-width');
   }
+
+  &__pill {
+    margin-top: spacing('s');
+    width: 100%;
+  }
 }
