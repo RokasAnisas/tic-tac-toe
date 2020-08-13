@@ -26,7 +26,7 @@ const LogBoard: FunctionComponent<LogBoardProps> = ({
   return (
     <div className={className}>
       <div className={`${className}__background`}></div>
-      <div className={`${className}__body`}>{renderLogPills}</div>
+      <div className={`${className}__body`}>{renderLogPills.reverse()}</div>
     </div>
   );
 };
