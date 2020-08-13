@@ -10,7 +10,7 @@ const LogBoard: FunctionComponent<LogBoardProps> = ({
 }: LogBoardProps) => {
   const className = 'log-board';
 
-  const renderLogPills = actionLog.map((item, index) => {
+  const renderLogPills = actionLog.reverse().map((item, index) => {
     return (
       <div key={index} className={`${className}__pill`}>
         <LogPill message={item.message} player={item.player} />
