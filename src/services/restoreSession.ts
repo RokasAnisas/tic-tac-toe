@@ -1,14 +1,16 @@
 import { Storage } from '@/constants';
 import { storageUtil } from '@/utils';
-import { GridBlockType } from '@/store/types';
-import { SetGrid } from '@/store/actions';
+import { GridBlockType, LogItem } from '@/store/types';
+import { SetGrid, SetLog } from '@/store/actions';
 
 export const restoreSession = (): void => {
-  console.log('james');
   const grid = storageUtil.getItem(Storage.grid);
   const gridParsed: GridBlockType[] = JSON.parse(grid!);
 
-  console.log(gridParsed);
+  const actionLog = storageUtil.getItem(Storage.actionLog);
+  const actionLogParsed: LogItem[] = JSON.parse(actionLog!);
+
 
   SetGrid(gridParsed);
+  SetLog(actionLogParsed);
 };

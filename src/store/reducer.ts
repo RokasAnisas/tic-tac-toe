@@ -69,6 +69,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
         actionLog: [...state.actionLog, action.payload],
       };
     }
+    case ActionTypes.setLog: {
+      return {
+        ...state,
+        actionLog: action.payload,
+      };
+    }
     case ActionTypes.setFreshLoad: {
       return {
         ...state,

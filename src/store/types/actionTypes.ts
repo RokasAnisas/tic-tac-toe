@@ -47,6 +47,11 @@ export interface AddLog {
   payload: LogItem;
 }
 
+export interface SetLog {
+  type: ActionTypes.setLog;
+  payload: LogItem[];
+}
+
 export interface SetFreshLoad {
   type: ActionTypes.setFreshLoad;
   payload: boolean;
@@ -62,6 +67,7 @@ export enum ActionTypes {
   setGridLock = 'SetGridLock',
   bumpScore = 'BumpScore',
   addLog = 'AddLog',
+  setLog = 'SetLog',
   setFreshLoad = 'SetFreshLoad',
 }
 
@@ -75,4 +81,5 @@ export type Actions =
   | BumpScore
   | SetGridLock
   | AddLog
+  | SetLog
   | SetFreshLoad;

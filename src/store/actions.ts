@@ -46,6 +46,10 @@ export const AddLog = (payload: LogItem): void => {
   store.dispatch({ type: ActionTypes.addLog, payload: payload });
 };
 
+export const SetLog = (payload: LogItem[]): void => {
+  store.dispatch({ type: ActionTypes.setLog, payload: payload });
+};
+
 export const SetFreshLoad = (payload: boolean): void => {
   store.dispatch({ type: ActionTypes.setFreshLoad, payload: payload });
 };
