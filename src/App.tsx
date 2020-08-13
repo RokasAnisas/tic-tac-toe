@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react';
 
-import { saveProgress, checkPreviousSession } from '@/services';
-import { ShowConfirmDialog } from '@/store/actions';
+import { saveProgress, checkPreviousSession, restoreSession } from '@/services';
+import { ShowConfirmDialog, SetFreshLoad } from '@/store/actions';
 import { Messages } from '@/constants';
 
 import MainLayout from '@/layouts/MainLayout';
@@ -18,9 +18,11 @@ const App: FunctionComponent = () => {
       if (value) {
         ShowConfirmDialog({
           message: Messages.previousSession,
-          actionText: Messages.recover
+          actionText: Messages.recover,
+          action: restoreSession,
         });
       }
+      SetFreshLoad(false);
     });
   });
 

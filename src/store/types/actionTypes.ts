@@ -47,6 +47,11 @@ export interface AddLog {
   payload: LogItem;
 }
 
+export interface SetFreshLoad {
+  type: ActionTypes.setFreshLoad;
+  payload: boolean;
+}
+
 export enum ActionTypes {
   setActivePlayer = 'SetActivePlayer',
   updateGridItem = 'UpdateGridItem',
@@ -57,6 +62,7 @@ export enum ActionTypes {
   setGridLock = 'SetGridLock',
   bumpScore = 'BumpScore',
   addLog = 'AddLog',
+  setFreshLoad = 'SetFreshLoad',
 }
 
 export type Actions =
@@ -68,4 +74,5 @@ export type Actions =
   | HideConfirmDialog
   | BumpScore
   | SetGridLock
-  | AddLog;
+  | AddLog
+  | SetFreshLoad;

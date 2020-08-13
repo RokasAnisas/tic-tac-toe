@@ -45,3 +45,7 @@ export const BumpScore = (payload: Player): void => {
 export const AddLog = (payload: LogItem): void => {
   store.dispatch({ type: ActionTypes.addLog, payload: payload });
 };
+
+export const SetFreshLoad = (payload: boolean): void => {
+  store.dispatch({ type: ActionTypes.setFreshLoad, payload: payload });
+};

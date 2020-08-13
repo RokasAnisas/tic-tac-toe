@@ -9,29 +9,32 @@ const select = (state: ApplicationState) => {
 };
 
 export const saveProgress = (): void => {
-  let currentValue: ApplicationState;
+  let currentState: ApplicationState;
 
   const listener = () => {
-    const previousValue = currentValue;
-    currentValue = select(store.getState());
+    const previousState = currentState;
+    currentState = select(store.getState());
 
-    // Save grid
-    if (previousValue?.grid !== currentValue.grid) {
-      const gridAsString = JSON.stringify(currentValue.grid);
-      storageUtil.setItem(Storage.grid, gridAsString);
+    if (!currentState.freshLoad) {
+      // Save grid
+      if (previousState?.grid !== currentState.grid) {
+        const gridAsString = JSON.stringify(currentState.grid);
+        storageUtil.setItem(Storage.grid, gridAsString);
+      }
+
+      // Save score
+      if (previousState?.score !== currentState.score) {
+        const scoreAsString = JSON.stringify(currentState.score);
+        storageUtil.setItem(Storage.score, scoreAsString);
+      }
+
+      // Save actionLog
+      if (previousState?.actionLog !== currentState.actionLog) {
+        const actionLogAsString = JSON.stringify(currentState.actionLog);
+        storageUtil.setItem(Storage.actionLog, actionLogAsString);
+      }
     }
 
-    // Save score
-    if (previousValue?.score !== currentValue.score) {
-      const scoreAsString = JSON.stringify(currentValue.score);
-      storageUtil.setItem(Storage.score, scoreAsString);
-    }
-
-    // Save actionLog
-    if (previousValue?.actionLog !== currentValue.actionLog) {
-      const actionLogAsString = JSON.stringify(currentValue.actionLog);
-      storageUtil.setItem(Storage.actionLog, actionLogAsString);
-    }
   };
 
   store.subscribe(listener);
