@@ -1,4 +1,4 @@
-import { ApplicationState, Actions, ActionTypes, LogItem } from './types';
+import { ApplicationState, Actions, ActionTypes } from './types';
 import { Player } from '@/constants';
 import initialState from './initialState';
 
@@ -63,17 +63,9 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
       };
     }
     case ActionTypes.addLog: {
-      const modifiedLog: LogItem[] = state.actionLog!;
-
-      modifiedLog.push({
-        message: action.payload.message,
-        player: action.payload.player,
-        gridSnapshot: action.payload.gridSnapshot,
-      });
-
       return {
         ...state,
-        actionLog: modifiedLog,
+        actionLog: [...state.actionLog, action.payload],
       };
     }
     default: {

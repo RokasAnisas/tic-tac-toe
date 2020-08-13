@@ -8,5 +8,5 @@ export interface ApplicationState {
   confirmDialog: ConfirmDialogType;
   gridLock: boolean;
   score: Score;
-  actionLog?: Array<LogItem>;
+  actionLog: Array<LogItem> | [];
 }

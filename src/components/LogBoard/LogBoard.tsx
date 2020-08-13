@@ -1,18 +1,19 @@
 import React, { FunctionComponent } from 'react';
 
-import { Player } from '@/constants';
+import { LogItem } from '@/store/types';
 import LogPill from '@/components/LogPill';
 
 import './LogBoard.scss';
 
-const LogBoard: FunctionComponent = () => {
+const LogBoard: FunctionComponent<LogBoardProps> = ({
+  actionLog,
+}: LogBoardProps) => {
   const className = 'log-board';
-  const pills = [1];
 
-  const renderLogPills = pills.map((item, index) => {
+  const renderLogPills = actionLog.map((item, index) => {
     return (
       <div key={index} className={`${className}__pill`}>
-        <LogPill message="made a move" player={Player.x} />
+        <LogPill message={item.message} player={item.player} />
       </div>
     );
   });
@@ -24,5 +25,9 @@ const LogBoard: FunctionComponent = () => {
     </div>
   );
 };
+
+interface LogBoardProps {
+  actionLog: LogItem[];
+}
 
 export default LogBoard;
