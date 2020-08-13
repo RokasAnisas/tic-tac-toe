@@ -1,4 +1,8 @@
-## Tic Tac Tie made by [@RokasAniss](https://github.com/RokasAniss)
+# Tic Tac Tie made by [@RokasAniss](https://github.com/RokasAniss)
+
+
+## Play it
+https://tic-tac-tie.netlify.app/
 
 ## Develop
 0. Clone the repo
