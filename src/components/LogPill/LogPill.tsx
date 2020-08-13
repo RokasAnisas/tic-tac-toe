@@ -26,8 +26,8 @@ const LogPill: FunctionComponent<LogPillProps> = ({
       <div className={`${className}__message-container`}>
         {player && (
           <div className={`${className}__player-mark`}>
-            {player === Player.x && <Xmark />}
-            {player === Player.o && <Omark small />}
+            {player === Player.x && <Xmark invert={accent} />}
+            {player === Player.o && <Omark invert={accent} small />}
           </div>
         )}
         <span className={`${className}__message`}>{message}</span>
