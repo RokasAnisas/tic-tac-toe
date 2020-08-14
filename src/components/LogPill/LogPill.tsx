@@ -6,6 +6,7 @@ import { Player } from '@/constants';
 import Xmark from '@/components/Xmark';
 import Omark from '@/components/Omark';
 import BoardGrid from '@/components/BoardGrid';
+import SimpleLoader from '@/components/SimpleLoader';
 import { GridBlockType } from '@/store/types';
 
 import './LogPill.scss';
@@ -39,14 +40,20 @@ const LogPill: FunctionComponent<LogPillProps> = ({
     </>
   );
 
+  const RenderLoader: FunctionComponent = () => (
+    <div className={`${className}__loader`}>
+      <SimpleLoader />
+    </div>
+  );
+
   return (
     <VisibilitySensor onChange={onVisibilityChange}>
       <div
-      className={classNames(className, {
-        '-accent': accent,
-      })}
-    >
-      {isVisible ? <RenderContent /> : <></>}
+        className={classNames(className, {
+          '-accent': accent,
+        })}
+      >
+        {isVisible ? <RenderContent /> : <RenderLoader />}
       </div>
     </VisibilitySensor>
   );

@@ -29,6 +29,12 @@
     font-size: font-size('s');
   }
 
+  &__loader {
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+
   &.-accent {
     background-color: color('accent');
 
