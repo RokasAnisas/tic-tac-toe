@@ -1,0 +1,39 @@
+.simple-loader {
+  $_size: 0.8rem;
+
+  display: flex;
+
+  &__block {
+    animation: loaderBlink duration('slow') infinite ease forwards;
+    background-color: color('key');
+    border-radius: $_size / 2;
+    display: block;
+    height: $_size;
+    margin: 0 $_size / 4;
+    opacity: 0.8;
+    width: $_size;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
+    }
+  }
+
+  @keyframes loaderBlink {
+    0% {
+      opacity: 0.6;
+      transform: scale(0.8);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0.6;
+      transform: scale(0.8);
+    }
+  }
+}
