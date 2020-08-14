@@ -1,5 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import classNames from 'classnames';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import { Player } from '@/constants';
 import Xmark from '@/components/Xmark';
@@ -16,13 +17,13 @@ const LogPill: FunctionComponent<LogPillProps> = ({
   gridSnapshot,
 }: LogPillProps) => {
   const className = 'log-pill';
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const onVisibilityChange = (val: boolean) => {
+    setIsVisible(val);
+  };
 
-  return (
-    <div
-      className={classNames(className, {
-        '-accent': accent,
-      })}
-    >
+  const RenderContent: FunctionComponent = () => (
+    <>
       <div className={`${className}__message-container`}>
         {player && (
           <div className={`${className}__player-mark`}>
@@ -35,7 +36,19 @@ const LogPill: FunctionComponent<LogPillProps> = ({
       <div className={`${className}__board-container`}>
         {gridSnapshot && <BoardGrid blocks={gridSnapshot} locked size="pill" />}
       </div>
-    </div>
+    </>
+  );
+
+  return (
+    <VisibilitySensor onChange={onVisibilityChange}>
+      <div
+      className={classNames(className, {
+        '-accent': accent,
+      })}
+    >
+      {isVisible ? <RenderContent /> : <></>}
+      </div>
+    </VisibilitySensor>
   );
 };
 

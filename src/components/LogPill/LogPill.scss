@@ -6,8 +6,9 @@
   background-color: color('secondary');
   border-radius: radius('primary');
   display: flex;
+  flex-grow: 1;
+  height: size('pill');
   justify-content: space-between;
-  min-height: size('pill');
   padding: 0 spacing('m');
   width: 100%;
 
