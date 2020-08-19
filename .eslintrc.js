@@ -15,5 +15,6 @@ module.exports = {
     semi: 'warn',
     'no-console': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
 };
