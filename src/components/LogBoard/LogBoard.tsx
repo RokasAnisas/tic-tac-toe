@@ -30,7 +30,7 @@ const LogBoard: FunctionComponent<LogBoardProps> = ({
 
   return (
     <div className={className} onMouseLeave={scrollToTop}>
-      <div className={`${className}__background`}></div>
+      <div className={`${className}__background`} />
       <div className={`${className}__body`} ref={bodyRef}>
         {renderLogPills.reverse()}
       </div>
